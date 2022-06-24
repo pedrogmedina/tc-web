@@ -1,0 +1,11 @@
+.e-avatar {
+  &__chat {
+    height: calcrem(26);
+    width: calcrem(26);
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+}

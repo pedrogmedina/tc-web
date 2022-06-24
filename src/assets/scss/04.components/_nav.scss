@@ -1,0 +1,21 @@
+.c-nav {
+    display: flex;
+    gap: calcrem(20);
+
+    &__item {
+       background-color: transparent;
+       color: $c-black;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       
+       p {
+        font-size: calcrem(14);
+        font-weight: 400;
+       }
+
+       &.active {
+        background-color: $c-primary1;
+       }
+    }
+}

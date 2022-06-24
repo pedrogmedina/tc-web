@@ -1,0 +1,142 @@
+// BORDERS
+
+
+/* BORDER LISTS */
+
+$border-width-map: (
+  0 : 0,
+  1 : 2,
+  2 : 4,
+  3 : 6,
+  4 : 8
+);
+
+$border-width-keys: map-keys($border-width-map);
+
+$border-style-map:(
+  "none" : none,
+  "hidden" : hidden,
+  "dotted" : dotted,
+  "dashed" : dashed,
+  "solid" : solid,
+  "double" : double,
+  "groove" : groove,
+  "ridge" : ridge,
+  "inset" : inset,
+  "outset" : outset
+);
+
+$border-style-keys: map-keys($border-style-map);
+
+$border-position-map: (
+  "top" : top,
+  "bottom" : bottom,
+  "start" : left,
+  "end" : right
+);
+
+$border-position-keys: map-keys($border-position-map);
+
+$border-radius-map: (
+  0 : 0,
+  1: 4,
+  2 : 6,
+  3 : 8,
+  4 : 10,
+  "circle" : 50
+);
+
+$border-radius-keys: map-keys($border-radius-map);
+
+
+/* UTILITIES */
+
+// GENERIC BORDER
+.u-border {
+  border-color: $c-secondary3;
+  border-style: solid;
+  border-width: calcrem(1);
+
+
+  @each $value in $border-width-keys {
+    &-#{$value} {
+      $res: map-get($border-width-map, $value);
+
+      $property: "border-width";
+      #{$property}: calcrem($res);
+
+    }
+  } // end of u-border-width 
+
+ @each $value in $border-style-keys {
+   &-#{$value} {
+    $res: map-get($border-style-map, $value);
+
+    $property: "border-style";
+    #{$property}: $res;
+   }
+ } // end of u-border-style
+
+ @each $name, $value in $colors {
+  &-#{$name} {
+    border-color: $value;
+  }
+ } // end of u-border-color
+}
+
+// BORDER POSITION
+@each $value in $border-position-keys {
+
+  $res: map-get($border-position-map, $value);
+
+  .u-border-#{$value} {
+    
+    $property: "border-" + $res;
+
+    #{$property}-color: $c-grey-2;
+    #{$property}-style: solid;
+    #{$property}-width: calcrem(1);
+  }
+
+
+  @each $width in $border-width-keys {
+    .u-border-#{$value}-#{$width} {
+      $res_width: map-get($border-width-map, $width);
+      $property: "border-" + $res + '-width';
+      
+      #{$property}: calcrem($res_width);
+    }
+  }
+
+  @each $style in $border-style-keys {
+    .u-border-#{$value}-#{$style} {
+      $res_style: map-get($border-style-map, $style);
+      $property: "border-" + $res + '-style';
+      
+      #{$property}: $res_style;
+    }
+  }
+
+  @each $name, $hex in $primary {
+    .u-border-#{$value}-#{$name} {
+      $res_color: map-get($primary, $name);
+      $property: "border-" + $res + '-color';
+      
+      #{$property}: $res_color;
+    }
+  }
+
+
+} // end of border position
+
+
+/* BORDER RADIUS */
+
+@each $value in $border-radius-keys {
+  .u-radius-#{$value} {
+    $res: map-get($border-radius-map, $value);
+    $property: "border-radius";
+
+    #{$property}: calcrem($res);
+  }
+}

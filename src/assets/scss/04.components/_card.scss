@@ -1,0 +1,86 @@
+.c-card {
+  background: #ffffff;
+  /* Shadow/S */
+  box-shadow: 0px 3px 8px rgba(28, 52, 84, 0.15);
+  border-radius: calcrem(4);
+  overflow: hidden;
+  width: 100%;
+
+  &__head {
+    color: $c-primary3;
+    padding: 10% 0;
+    text-align: center;
+    
+    p {
+      font-weight: 500;
+    }
+
+    &--nop {
+      @extend .c-card__head;
+      padding: calcrem(50) 0 calcrem(30) 0;
+
+      @include xs-device {
+        padding: 0 calcrem(14);
+      }
+
+    }
+
+    &--mini {
+      @include xs-device {
+        padding: 0 calcrem(8);
+      }
+    }
+
+  }
+
+  &__body {
+    text-align: center;
+    
+    &-img {
+    margin: 22% auto;
+    width: 90%;
+
+      img {
+        @include setWidthAndHeight;
+      }
+
+      &--sad {
+        @extend .c-card__body-img;
+        margin: 5% auto;
+      }
+    }
+  }
+
+  /* MODIFICADORES PARA PROCESO 'ADD-TICKET' DE TICKETING.ICP */
+  &-grid {
+    @extend .c-card;
+
+    height: 100%;
+    margin: 0 auto;
+    width: 80%;
+
+    &__head {
+      margin: calcrem(8) 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    &__body {
+      &-img {
+        margin: 0;
+        width: 70%;
+
+        img {
+          @include setWidthAndHeight;
+        }
+  
+      }
+    }
+
+  }
+
+  @include xs-device {
+    background-color: $c-comp2;
+  }
+
+}

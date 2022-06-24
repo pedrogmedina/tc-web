@@ -1,0 +1,53 @@
+$bg-pill-light: map-get($secondary, "secondary1");
+
+.e-pill {
+  align-items: center;
+  display: flex;
+  
+  &__label {
+    color: $c-primary2;
+    font-size: calcrem(12);
+    font-weight: 500;
+    margin-right: calcrem(6);
+
+    &--ellipsis {
+      @extend .e-pill__label;
+      @include ellipsis-word(100px);
+    }
+  }
+
+  &__button {
+    border-radius: calcrem(2);
+    cursor: pointer;
+    font-size: calcrem(12);
+    font-weight: 600;
+    padding: calcrem(4) calcrem(8);
+    width: fit-content;
+    &--light {
+      background-color: $bg-pill-light;
+    }
+  }
+  &__badge-info{
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    top: 2px;
+    right: 7px;
+  }
+
+  &__img {
+    &--circular {
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &--icon {
+        height: calcrem(22);
+        width: calcrem(22);
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+}

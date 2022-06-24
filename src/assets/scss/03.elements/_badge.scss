@@ -1,0 +1,26 @@
+.e-badge {
+  padding-bottom: calcrem(3);
+  padding-left: calcrem(8);
+  padding-right: calcrem(8);
+  padding-top: calcrem(3);
+  width: fit-content;
+
+  &--light {
+    background-color: $c-white;
+    border-radius: calcrem(50);
+  }
+
+  &-ball {
+    background-color: $c-error;
+    border-radius: 100%;
+    height: calcrem(6);
+    margin-right: calcrem(4);
+    width: calcrem(6);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+  }
+
+}
+

@@ -1,0 +1,6 @@
+// PACKAGES: versión pruebas para super utilities.
+// Agrupación de varias propiedades en paquetes de propiedades (p-flex--mod)
+// La intención es intentar ahorrar escritura de clases en el html agrupando "utilities" mas usadas.
+
+@import 'flexing';
+@import 'grid';

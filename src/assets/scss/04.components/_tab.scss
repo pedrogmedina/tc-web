@@ -1,0 +1,50 @@
+.c-tab {
+  // Modificadores
+  &--w100 {
+    width: 100%;
+  }
+
+  &--between {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__caption {
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    font-weight: 600;
+    margin: 0 16px;
+    opacity: 0.4;
+    padding: calcrem(16) calcrem(26);
+    position: relative;
+
+    .bar-active {
+      background-color: $c-primary1;
+      border-radius: calcrem(25);
+      bottom: 0;
+      display: none;
+      height: calcrem(2);
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    @keyframes slide-right {
+      from {
+        transform: translateX(-100px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    &.active {
+      opacity: 1;
+      .bar-active {
+        animation: slide-right 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        display: block;
+      }
+    }
+  }
+}

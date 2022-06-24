@@ -1,0 +1,38 @@
+@import '../../../../assets/scss/00.settings/variables';
+@import '../../../../assets/scss/02.tools/all-tools';
+
+$c: $prefix + '-smenu';
+
+#{$c} {
+    box-shadow: 0px 15px 28px -25px rgb(0 0 0 / 12%);
+    animation: fade-in ease-in 300ms;
+
+    &__card {
+        border: calcrem(3) solid $c-white;
+        border-radius: calcrem(6);
+        cursor: pointer;
+        display: grid;
+        grid-auto-flow: column;
+        margin: calcrem(16) 0;
+        width: calcrem(320);
+
+        &:hover {
+            box-shadow: 0 0 12px rgba(215, 215, 215, 0.4);
+        }
+
+        .thumb {
+            border-radius: calcrem(6);
+            height: calcrem(77);
+            overflow: hidden;
+            width: calcrem(102);
+
+            img {
+                @include setWidthAndHeight(100%, 100%);
+            }
+        }
+
+        .desc {
+            margin: 0 calcrem(12);
+        }
+    }
+}

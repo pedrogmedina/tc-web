@@ -1,0 +1,59 @@
+// Mapa de tamaños para la lista
+$map-size: (
+  xs: 90,
+  sm: 120,
+  md: 140,
+  lg: 160,
+  xl: 210,
+);
+
+.c-list {
+  display: grid;
+  width: 100%;
+  
+  // Size
+  $size-list: map-keys($map-size);
+  
+  @each $value in $size-list {
+  $res: map-get($map-size, $value);
+    &--#{$value} {
+      width: calcrem($res);
+    }
+  }
+
+  &--horizontal {
+    grid-auto-flow: column;
+    grid-gap: calcrem(16);
+  }
+
+  &__item {
+    align-items: center;
+    border-radius: calcrem(6);
+    cursor: pointer;
+    color: $c-primary2;
+    display: flex;
+    padding: calcrem(8) calcrem(6) calcrem(8) calcrem(12);
+    
+    p {
+      font-size: calcrem(14);
+    }
+
+    .lnr {
+      font-size: calcrem(12);
+      margin: 0 calcrem(6) 0 calcrem(12);
+    }
+    
+    &:hover {
+      background-color: rgba($c-grey-4, 0.1);
+    }
+
+    &:last-child {
+     margin-right: 0;
+    }
+
+    &.active {
+      background-color: $c-primary1;
+      color: $c-white;
+    }
+  }
+}

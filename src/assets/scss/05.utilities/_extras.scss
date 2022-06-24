@@ -1,0 +1,135 @@
+/* UTILITIES EXTRA */
+
+@mixin opacity() {
+  $opacity-list: map-values($opacity-map);
+
+  @each $value in $opacity-list {
+    $doc: "0.";
+    .u-opacity-#{$value} {
+      opacity: #{$doc}#{$value};
+    }
+  }
+}
+
+.u-opacity-100 {
+  opacity: 1;
+}
+
+@include opacity();
+
+.u-ellipsis {
+  @include ellipsis-text;
+
+  &--line {
+    @extend .u-ellipsis;
+    -webkit-line-clamp: 1;
+  }
+}
+
+.u-state {
+  &-disable {
+    opacity: 0.5;
+  }
+}
+
+
+.u-flex-fill {
+  flex: 1 1 auto;
+}
+
+@mixin flex-grow-shrink() {
+  $cases: (
+    0, 1
+  );
+
+
+  @each $value in $cases {
+    .u-flex-grow-#{$value} {
+      flex-grow: $value;
+    }
+
+    .u-flex-shrink-#{$value} {
+      flex-shrink: $value;
+    }
+  }
+
+}
+
+@include flex-grow-shrink();
+
+
+$resize-map: (
+  "n" : none,
+  "both" : both,
+  "h" : horizontal,
+  "v" : vertical,
+  "ih" : inherit,
+  "i" : initial,
+  "u" : unset
+);
+
+$resize-keys: map-keys($resize-map);
+
+@mixin resizin {
+  @each $value in $resize-keys {
+    .u-rs-#{$value} {
+      $prop-value: map-get($resize-map , $value);
+      resize: $prop-value;
+    }
+  }
+}
+
+@include resizin;
+
+
+$lineheight-map: (
+  "normal" : normal,
+  "initial" : initial,
+  "inherit" : inherit,
+  "unset" : unset
+);
+
+$lineheight-keys: map-keys($lineheight-map);
+
+@mixin line-height {
+  @each $value in $lineheight-keys {
+    .u-lheight-#{$value} {
+      $prop-value: map-get($lineheight-map, $value);
+      line-height: $prop-value;
+    }
+  }
+}
+
+@include line-height;
+
+.u-block-events {
+  cursor: not-allowed;
+  opacity: .4;
+  pointer-events: none;
+}
+
+
+// FLEX WRAP
+
+$wrap-map: (
+  "nowrap" : nowrap,
+  "wrap" : wrap,
+  "reverse" : wrap-reverse,
+  "inherit" : inherit,
+  "initial" : initial
+);
+
+$wrap-keys: map-keys($wrap-map);
+
+@mixin flex-wrap {
+  @each $value in $wrap-keys {
+    .u-fwrap-#{$value} {
+      $prop-value: map-get($wrap-map, $value);
+      flex-wrap: $prop-value;
+
+      @include sufixes(flex-wrap, $prop-value);
+    }
+  }
+}
+
+@include flex-wrap;

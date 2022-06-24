@@ -1,0 +1,77 @@
+// CHAT BUBBLES
+
+.e-bubble {
+
+  $self: &;
+
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  
+
+  /* BUBBLE ITSELF */
+  &__message {
+    padding: calcrem(8) calcrem(16);
+    position: relative;
+
+    /* DOCS ROW */
+    &-docs {
+      display: flex;
+      flex-flow: wrap;
+      gap: calcrem(8); 
+      margin-bottom: calcrem(8);
+
+      // .e-pill {
+      //   max-width: max-content;
+      // }
+
+    } // END OF DOCS ROW
+    
+
+    /* MESSAGE ROW */
+    &.outgoing {
+      background-color: $c-secondary1;
+      border-radius: calcrem(10) calcrem(10) 0 calcrem(10);
+      margin-right: calcrem(26);
+    }
+
+    &.incoming {
+      background-color: $c-grey-2;
+      border-radius: calcrem(10) calcrem(10) calcrem(10) 0;
+      margin-left: calcrem(26);
+    }
+    // END OF MESSAGE ROW
+
+    
+
+    /* PICTURES ROW */
+    &-pictures {
+      display: grid; 
+      grid-auto-flow: row dense; 
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-template-rows: 1fr; 
+      gap: calcrem(8); 
+      grid-template-areas: ". . .";
+      margin-top: calcrem(8);
+    }
+
+    &-img {
+      height: auto;
+      position: relative;
+      width: 100%;
+
+      .download {
+        bottom: 2%;
+        position: absolute;
+        right: 2%;
+        z-index: 2;
+      }
+    } // END OF PICTURES ROW 
+  } // END OF BUBBLE MESSAGE
+
+  /* USER INFO (GOES BELOW THE BUBBLE ITSELF) */
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  } // END OF USER INFO
+  
+}

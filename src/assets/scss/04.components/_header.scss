@@ -1,0 +1,28 @@
+.c-header {
+    align-items: center;
+    display: flex;
+    padding: calcrem(16) 0;
+    width: 100%;
+
+    &__container {
+        display: flex;
+        max-width: 1720px;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    &__block {
+        align-items: center;
+        display: flex;
+    }
+    
+    &__logo {
+        height: auto;
+        width: calcrem(170);
+
+        img {
+            height: 100%;
+        }
+    }
+}
+

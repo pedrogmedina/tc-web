@@ -1,0 +1,201 @@
+@use "sass:math";
+
+@function calcrem($size) {
+  $rem-size:  math.div($size, 16) + rem;
+  @return $rem-size;
+}
+
+@mixin setWidthAndHeight($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+  min-height: $height;
+}
+
+@mixin center-items($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin center-contents($align: center, $justify: center) {
+  display: flex;
+  align-content: $align;
+  justify-content: $justify;
+}
+
+@mixin clearfix{
+  &:after{
+    content: "";
+    display:inline-block;
+    clear:both;
+  }
+}
+
+@mixin setImage($imagen, $height: 100vh, $position: center center){
+  background-image: $imagen;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height:$height;
+}
+
+@mixin transition($property: all ,$time, $style) {
+  transition: $property $time $style;
+}
+
+@mixin animation(
+  $name,
+  $duration: 0s, 
+  $timing: '', 
+  $delay: '', 
+  $count: '', 
+  $direction: '', 
+  $fill: '', 
+  $state: '')
+  {
+  animation-name: $name;
+  animation-duration: $duration;
+
+  @if $timing != '' {
+    animation-timing-function: $timing;
+  }
+
+  @if $delay != '' {
+    animation-delay: $delay;
+  }
+
+  @if $count != '' {
+    animation-iteration-count: $count;
+  }
+
+  @if $direction != '' {
+    animation-direction: $direction;
+  }
+
+  @if $fill != '' {
+    animation-fill-mode: $fill;
+  }
+
+  @if $state != '' {
+    animation-play-state: $state; 
+  }
+}
+
+@mixin fixed-full-device($background) {
+  background-color: $background;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+@mixin sufixes($property, $res) {
+  &\@xxl {
+    @include xxl-device {
+      #{$property}: $res !important;
+    }
+  }
+
+  &\@xl {
+    @include xl-device {
+      #{$property}: $res !important;
+    }
+  }
+
+  &\@lg {
+    @include lg-device {
+      #{$property}: $res !important;
+    }
+  }
+
+  &\@md {
+    @include md-device {
+      #{$property}: $res !important;
+    }
+  }
+
+  &\@xs {
+    @include xs-device {
+      #{$property}: $res !important;
+    }
+  }
+}
+
+// mergear arrays
+@function map-collect($maps...) {
+  $collection: ();
+
+  @each $map in $maps {
+    $collection: map-merge($collection, $map);
+  }
+  @return $collection;
+}
+
+// Borde izquierdo para elemento activo en sidebar
+@mixin left-active-nav {
+  &::after {
+    background-color: $c-primary1;
+    border-radius: calcrem(50);
+    content: '';
+    height: calcrem(48);
+    left: 0;
+    position: absolute;
+    width: calcrem(3);
+  }
+}
+
+
+@mixin ellipsis-text {
+    display: -webkit-box;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+@mixin ellipsis-word($width) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: #{$width};
+}
+
+
+
+@mixin app-scroll {
+  ::-webkit-scrollbar {
+    width: calcrem(6);
+    height: calcrem(8);
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $c-grey-4;
+    border-radius: calcrem(50);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $c-grey-9;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: $c-grey-7;
+  }
+  ::-webkit-scrollbar-track {
+    background: $c-grey-2;
+    border: 0px none $c-grey-2;
+    border-radius: calcrem(89);
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: $c-grey-2;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: $c-grey-2;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

@@ -1,0 +1,124 @@
+$quill-btns: (
+  ".ql-size", ".ql-bold", ".ql-italic", ".ql-underline", ".ql-strike", ".ql-list", ".ql-align", ".ql-link"
+);
+
+
+.c-quill-editor {
+  .ql-toolbar {
+    border-bottom: none !important;
+    border-color: #CED4DA !important;
+    border-radius: calcrem(6) calcrem(6) 0 0;
+  
+  
+    .ql-formats {
+      background-color: #6B7785 !important;
+      border-radius: 4px !important;
+      -webkit-border-radius: 4px !important;
+      -moz-border-radius: 4px !important;
+      -ms-border-radius: 4px !important;
+      -o-border-radius: 4px !important;
+    }
+  
+    .ql-stroke {
+      stroke: #FFF !important;
+    }
+  
+  
+    .ql-fill {
+      fill: #FFF !important;
+    }
+  
+    .ql-picker-label {
+      color: #FFF !important;
+  
+      &:hover {
+        color: #FFF !important;
+      }
+    }
+  
+    .ql-active {
+      background-cpxolor: #494F55 !important;
+    }
+  
+    .ql-picker-options {
+      background-color: #6B7785 !important;
+      border-color: #FFF !important;
+      color: #FFF !important;
+  
+      .ql-picker-item {
+        &:hover {
+          color: #FFF !important;
+          text-decoration: underline !important;
+        }
+      }
+  
+      .ql-selected {
+        color: #FFF !important;
+        text-decoration: underline !important;
+      }
+    }
+  }
+  
+  
+  .ql-container {
+    border-color: #CED4DA !important;
+    height: calcrem(190);
+    border-radius: 0 0 calcrem(6) calcrem(6);
+  }
+
+  .ql-snow .ql-editor img {
+    max-width: 30%!important;
+    margin-right: 1rem;
+  }
+
+  .ql-snow {
+    background-color: $c-white;
+  }
+
+
+  @include xs-device {
+
+    .ql-formats {
+      
+      display: none !important;
+
+      &:nth-child(5) {
+        background-color: $c-white !important;
+        display: flex !important;
+      }
+
+    }
+
+    @each $btn in $quill-btns {
+      #{$btn} {
+        display: none !important;
+        margin-right: 0 !important;
+      }
+    }
+
+    .ql-image {
+      border: calcrem(1) solid #494F55 !important;
+      border-radius: calcrem(4) !important;
+      -webkit-border-radius: calcrem(4) !important;
+      -moz-border-radius: calcrem(4) !important;
+      -ms-border-radius: calcrem(4) !important;
+      -o-border-radius: calcrem(4) !important;
+  
+      .ql-stroke {
+        stroke: #494F55 !important;
+      }
+  
+      .ql-fill {
+        fill: #494F55 !important;
+      }
+  
+    }
+  }
+
+  
+
+}
+
+
+
+

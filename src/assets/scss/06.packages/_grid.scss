@@ -1,0 +1,24 @@
+// PRUEBA DE GRID COLUMNAS ICP
+
+$columns-map: (
+  0 : 0, 1 : 1, 2 : 2, 3 : 3, 4 : 4, 5 : 5, 6 : 6,
+  7 : 7, 8 : 8, 9 : 9, 10 : 10, 11 : 11, 12 : 12
+);
+
+$sizes-map: (
+  xs, md, lg, xl, xxl
+);
+
+$column-keys: map-keys($columns-map);
+
+
+.icp-col-0 {
+  display: none;
+}
+
+.icp-col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,46 @@
+// TOAST
+
+.c-toast {
+  // animation: fade-in 1s ease-in;
+  background-color: $c-white;
+  border-radius: calcrem(4);
+  border-left: calcrem(4) solid;
+  filter: drop-shadow(calcrem(2) calcrem(6) calcrem(9) rgba($c-black, 0.18));
+  height: fit-content;
+  opacity: 1;
+  overflow: hidden;
+  padding: calcrem(8);
+  position: absolute;
+  transition: opacity .5s linear;
+  visibility: visible;
+  width: calcrem(318);
+  z-index: 100;
+
+  @include xs-device {
+    max-width: 70vw;
+  }
+
+  &.success {
+    border-left-color: $c-success;
+  }
+
+  &.error {
+    border-left-color: $c-error;
+  }
+
+
+  &.bmiddle {
+    bottom: 5%;
+    left: 70%;
+
+    @include xs-device {
+      left: 20%;
+    }
+  }
+
+  &.closed {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s linear;
+  }
+}

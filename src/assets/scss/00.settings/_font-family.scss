@@ -1,0 +1,74 @@
+// @mixin face-property($weight) {
+//   font-family: $font-family;
+//   font-weight: $weight;
+//   font-style: normal;
+//   font-strecht: condensed;
+// };
+
+// @font-face {
+//   src: (
+//     url("../../assets/fonts/typo/roboto.eot?#iefix") format('embedded-opentype'),
+//     url("../../assets/fonts/typo/roboto.woff") format("woff"),
+//     url("../../assets/fonts/typo/roboto.woff2") format("woff2"),
+//     url("../../assets/fonts/typo/roboto.ttf") format("truetype"),
+//     url("../../assets/fonts/typo/roboto.svg") format("svg"),
+//   );
+
+//   @include face-property(normal);
+// }
+
+// @font-face {
+//   font-family: $font-family;
+
+//   src: (
+//     url("../../assets/fonts/typo/roboto-300.eot?#iefix") format('embedded-opentype'),
+//     url("../../assets/fonts/typo/roboto-300.woff") format("woff"),
+//     url("../../assets/fonts/typo/roboto-300.woff2") format("woff2"),
+//     url("../../assets/fonts/typo/roboto-300.ttf") format("truetype"),
+//     url("../../assets/fonts/typo/roboto-300.svg") format("svg"),
+//   );
+
+//   @include face-property(300);
+// }
+
+// @font-face {
+//   font-family: $font-family;
+
+//   src: (
+//     url("../../assets/fonts/typo/roboto-500.eot?#iefix") format('embedded-opentype'),
+//     url("../../assets/fonts/typo/roboto-500.woff") format("woff"),
+//     url("../../assets/fonts/typo/roboto-500.woff2") format("woff2"),
+//     url("../../assets/fonts/typo/roboto-500.ttf") format("truetype"),
+//     url("../../assets/fonts/typo/roboto-500.svg") format("svg"),
+//   );
+
+//   @include face-property(500);
+// }
+
+// @font-face {
+//   font-family: $font-family;
+
+//   src: (
+//     url("../../assets/fonts/typo/roboto-700.eot?#iefix") format('embedded-opentype'),
+//     url("../../assets/fonts/typo/roboto-700.woff") format("woff"),
+//     url("../../assets/fonts/typo/roboto-700.woff2") format("woff2"),
+//     url("../../assets/fonts/typo/roboto-700.ttf") format("truetype"),
+//     url("../../assets/fonts/typo/roboto-700.svg") format("svg"),
+//   );
+
+//   @include face-property(700);
+// }
+
+// @font-face {
+//   font-family: $font-family;
+
+//   src: (
+//     url("../../assets/fonts/typo/roboto-900.eot?#iefix") format('embedded-opentype'),
+//     url("../../assets/fonts/typo/roboto-900.woff") format("woff"),
+//     url("../../assets/fonts/typo/roboto-900.woff2") format("woff2"),
+//     url("../../assets/fonts/typo/roboto-900.ttf") format("truetype"),
+//     url("../../assets/fonts/typo/roboto-900.svg") format("svg"),
+//   );
+
+//   @include face-property(900);
+// }

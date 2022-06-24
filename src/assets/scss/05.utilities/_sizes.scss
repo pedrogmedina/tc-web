@@ -1,0 +1,110 @@
+// SIZING UTILITIES
+
+$sizes: (
+  per : "%", 
+  vw : "vw", 
+  vh : "vh", 
+  vmin : "vmin", 
+  vmax : "vmax",
+  px : "px"
+);
+
+$sizes-keys: map-keys($sizes);
+
+$number-map: (
+  0 : 0, 5 : 5, 10 : 10, 15 : 15, 20 : 20, 25 : 25, 30 : 30, 35 : 35, 40 : 40, 45 : 45, 50 : 50,
+  55 : 55, 60 : 60, 65 : 65, 70 : 70, 75 : 75, 80 : 80, 85 : 85, 90 : 90, 95 : 95, 100 : 100
+);
+
+$number-keys: map-keys($number-map);
+
+$props-map: (
+  "max" : max-content,
+  "min" : min-content,
+  "content" : fit-content,
+  "available" : -webkit-fill-available,
+  "auto" : auto,
+  "unset" : unset,
+  "initial" : initial
+);
+
+$props-keys: map-keys($props-map);
+
+$rem-map: (
+  1 : 1rem,
+  2 : 2rem,
+  3 : 3rem,
+  4 : 4rem
+);
+
+$rem-keys: map-keys($rem-map);
+
+@mixin sizing {
+  @each $size in $sizes-keys {
+    @each $num in $number-keys {
+
+      .u-size-#{$size}-#{$num} {
+        $value-size: map-get($sizes, $size);
+        width: $num + #{$value-size};
+
+        @include sufixes(width, $num + #{$value-size});
+      }
+
+      .u-maxsize-#{$size}-#{$num} {
+        $value-size: map-get($sizes, $size);
+        max-width: $num + #{$value-size};
+      }
+
+      .u-height-#{$size}-#{$num} {
+        $value-size: map-get($sizes, $size);
+        height: $num + #{$value-size};
+      }
+
+      .u-maxheight-#{$size}-#{$num} {
+        $value-size: map-get($sizes, $size);
+        max-height: $num + #{$value-size};
+      }
+    }
+  }
+
+  @each $prop in $props-keys {
+    .u-size-#{$prop} {
+      $value-width: map-get($props-map, $prop);
+
+      width: #{$value-width};
+    }
+
+    .u-maxsize-#{$prop} {
+      $value-width: map-get($props-map, $prop);
+
+      max-width: #{$value-width};
+    }
+
+    .u-height-#{$prop} {
+      $value-width: map-get($props-map, $prop);
+
+      height: #{$value-width};
+
+      @include sufixes(height, $value-width);
+    }
+
+    .u-maxheight-#{$prop} {
+      $value-width: map-get($props-map, $prop);
+
+      max-height: #{$value-width};
+    }
+  }
+
+
+  @each $rem in $rem-keys {
+    .u-height-#{$rem} {
+      $value-rem: map-get($rem-map, $rem);
+      height: $value-rem;
+    }
+  }
+
+}
+
+@include sizing;
+
+

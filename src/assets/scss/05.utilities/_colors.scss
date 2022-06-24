@@ -1,0 +1,46 @@
+// Colors
+// Megeamos arrays de colores
+$colors: map-collect(
+  $primary,
+  $secondary,
+  $state,
+  $complementary,
+  $semantic,
+  $grey,
+  $blackwhite
+);
+
+// Recogemos indices de $colors
+$colorNames: map-keys($colors);
+
+@mixin color-modifiers($prop) {
+  @each $value in $colorNames {
+    $color: map-get($colors, $value);
+    &-#{$value} {
+      #{$prop}: $color;
+    }
+  }
+}
+
+.u-color {
+  @include color-modifiers(color);
+}
+
+// Background
+.u-bg {
+  @include color-modifiers(background);
+}
+
+// Shadows
+
+@mixin shadow-modifiers {
+  @each $name, $rgba in $shadows {
+    &-#{$name} {
+      box-shadow: $rgba;
+    }
+  }
+}
+
+.u-shadow {
+  @include shadow-modifiers();
+}

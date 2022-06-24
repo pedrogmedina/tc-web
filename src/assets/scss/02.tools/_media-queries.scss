@@ -1,0 +1,50 @@
+/* CHEATSHEET */
+// $bp-sm: 576px;
+// $bp-md: 768px;
+// $bp-lg: 992px;
+// $bp-xl: 1200px;
+// $bp-xxl: 1400px;
+
+
+// @mixin movil {
+//   @media (max-width: $bp-sm - 1) { @content; }
+// }
+// @mixin movil-full-resolution {
+//   @media (min-width: $bp-sm) { @content; }
+// }
+// @mixin tablet {
+//   @media (min-width: $bp-md) { @content; }
+// }
+// @mixin desktop {
+//   @media (min-width: $bp-lg) { @content; }
+// }
+// @mixin big-desktop {
+//   @media (min-width: $bp-xl) { @content; }
+// }
+
+
+// smartphones
+@mixin xs-device {
+  @media (max-width: $bp-sm - 1) { @content; }
+}
+
+
+// tablets small - smartphones horizontal orient.
+@mixin md-device {
+  @media (min-width: $bp-sm) and (max-width: $bp-md - 1) { @content; }
+}
+
+// tablets
+@mixin lg-device {
+  @media (min-width: $bp-md) and (max-width: $bp-lg - 1) { @content; }
+}
+
+// laptops - desktops small - tablets big
+@mixin xl-device {
+  @media (min-width: $bp-lg) and (max-width: $bp-xl - 1) { @content; }
+}
+
+// desktop big
+@mixin xxl-device {
+  @media (min-width: $bp-xxl) { @content; }
+}

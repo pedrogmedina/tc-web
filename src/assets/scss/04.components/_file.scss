@@ -1,0 +1,43 @@
+.c-file {
+  align-items: center;
+  border: calcrem(1) solid $gray-400;
+  border-radius: calcrem(6);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: calcrem(6);
+  text-align: center;
+  width: calcrem(100);
+  word-break: break-word;
+
+
+  &__icon {
+    font-size: calcrem(28);
+    width: calcrem(32);
+  }
+
+  img {
+    margin-bottom: calcrem(6);
+  }
+
+  &__name {
+    font-size: calcrem(12);
+    line-height: 1.1;
+    margin-top: calcrem(4);
+  }
+
+  // Modificadores
+  &--upload {
+    background-color: $light;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    .input {
+      width: 100%;
+
+    }
+  }
+}

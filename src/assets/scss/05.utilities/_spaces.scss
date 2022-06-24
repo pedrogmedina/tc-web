@@ -1,0 +1,195 @@
+// SPACING --> MARGIN & PADDING
+
+
+$spacing-map: (
+  "0" : 0,
+  "1" : .25,
+  "2" : .5,
+  "3" : 1,
+  "4" : 1.25,
+  "5" : 1.5,
+  "6" : 1.75,
+  "7" : 2,
+  "8" : 2.5,
+  "9" : 3
+);
+
+$spacing-list: map-keys($spacing-map);
+
+
+/* MARGIN */
+
+// margin
+@each $value in $spacing-list {
+  .u-m-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "margin";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res + rem);
+
+  }
+}
+
+// margin-top
+@each $value in $spacing-list {
+  .u-mt-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "margin-top";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res + rem);
+
+  }
+}
+
+// margin-bottom
+@each $value in $spacing-list {
+  .u-mb-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "margin-bottom";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res + rem);
+
+  }
+}
+
+// margin-left
+@each $value in $spacing-list {
+  .u-ms-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "margin-left";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res  + rem);
+
+  }
+}
+
+// margin-right
+@each $value in $spacing-list {
+  .u-me-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "margin-right";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res  + rem);
+
+  }
+}
+
+// margin eje x
+@each $value in $spacing-list {
+  .u-mx-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    margin-left: $res + rem;
+    margin-right: $res + rem;
+  }
+}
+
+// margin eje y
+@each $value in $spacing-list {
+  .u-my-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    margin-bottom: $res + rem;
+    margin-top: $res + rem;
+  }
+}
+
+
+
+/* PADDING */
+
+// padding
+@each $value in $spacing-list {
+  .u-p-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "padding";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res  + rem);
+
+  }
+}
+
+// padding-top
+@each $value in $spacing-list {
+  .u-pt-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "padding-top";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res  + rem);
+
+  }
+}
+
+// padding-bottom
+@each $value in $spacing-list {
+  .u-pb-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "padding-bottom";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res  + rem);
+
+  }
+}
+
+// padding-left
+@each $value in $spacing-list {
+  .u-ps-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "padding-left";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res  + rem);
+
+  }
+}
+
+// padding-right
+@each $value in $spacing-list {
+  .u-pe-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    $property: "padding-right";
+    #{$property}: $res + rem;
+
+    @include sufixes($property, $res  + rem);
+
+  }
+}
+
+// padding eje x
+@each $value in $spacing-list {
+  .u-px-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    padding-left: $res + rem;
+    padding-right: $res + rem;
+  }
+}
+
+// padding eje y
+@each $value in $spacing-list {
+  .u-py-#{$value} {
+    $res: map-get($spacing-map, $value);
+
+    padding-bottom: $res + rem;
+    padding-top: $res + rem;
+  }
+}
+

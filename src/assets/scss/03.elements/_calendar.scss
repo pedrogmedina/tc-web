@@ -1,0 +1,122 @@
+.cdk-overlay-pane {
+  margin-top: calcrem(8)!important;
+  border: 0!important;
+}
+// Estilos para MatDatePicker
+.mat-datepicker {
+  &-content {
+    width: calcrem(238);
+
+      .mat-calendar {
+        height: fit-content!important;
+        width: 100%!important;
+
+        &-table {
+          &-header {
+            color: $c-black;
+            &-divider {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &-controls {
+          .mat-focus-indicator {
+            // Quitamos controles en el top de calendario
+            display: block;
+            &.mat-calendar-period-button {
+              display: block;
+            }
+          }
+        }
+
+        &-body {
+          &-cell {
+            &-content {
+              // Estilos item días calendario
+              border-radius: calcrem(4) !important;
+              color: $c-primary2;
+              margin: 0;
+            }
+
+            &:not(.mat-calendar-body-disabled) {
+              &:hover {
+                > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+                  // Controlar hover de día
+                  border: calcrem(1) solid $c-primary1;
+                  background-color: transparent;
+                }
+              }
+            }
+          }
+
+          &-selected {
+            background-color: $c-primary1;
+            color: $c-white;
+          }
+
+          &-range-start {
+            // Caja franja días seleccionados
+            &:not(.mat-calendar-body-in-comparison-range) {
+              &::before {
+                border-top-left-radius: 4px !important;
+                border-bottom-left-radius: 4px !important;
+              }
+            }
+          }
+
+          &-in-range {
+            // > div {
+            //   color: $c-white;
+            // }
+
+            &::before {
+              background-color: rgba($c-secondary1, 0.2);
+            }
+          }
+
+          &-label {
+            // Quitar mes dentro de calendar
+            color: transparent;
+          }
+        }
+      }
+  }
+
+  &-actions {
+    justify-content: space-between!important;
+  }
+
+  &-toggle {
+    .mat-icon-button {
+      bottom: calcrem(6);
+      position: relative;
+
+      .mat-button-focus-overlay {
+        opacity: 0 !important;
+      }
+
+      .icon-Calendar {
+        font-size: calcrem(18);
+      }
+    }
+  }
+}
+
+
+.mat-date {
+  &-range {
+    &-input {
+      font-size: calcrem(14);
+      padding-left: calcrem(6);
+      &-start-wrapper {
+        .mat-date-range-input-inner {
+          left: 6px !important;
+          top: 3px !important;
+        }
+      }
+    }
+  }
+}

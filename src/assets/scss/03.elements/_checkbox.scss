@@ -1,0 +1,32 @@
+
+.c-checkbox {
+  height: calcrem(16);
+  width: calcrem(16);
+
+
+  /* ESTOS ESTILOS PISAN LOS DE ANGULAR MATERIAL (PERSEO OFICINA) */
+
+  .mat-checkbox-frame {
+    border-color: $c-primary2;
+    border-radius: calcrem(3);
+  } // borde del checkbox
+
+  .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple {
+    opacity: 0 !important;
+  } // efecto hover
+  
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+  .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: $c-primary1!important;
+    border: calcrem(1) solid $c-white;
+  } // fondo checkbox checked
+
+
+
+
+
+
+
+

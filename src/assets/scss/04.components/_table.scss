@@ -1,0 +1,247 @@
+.c-table {
+  width: 100%;
+
+  &__head {
+    align-items: center;
+    display: flex;
+    width: inherit;
+  }
+
+  &__table {
+
+    $self: &;
+
+    .mat-row {
+      &:last-of-type {
+        .mat-cell {
+          border-bottom-width: calcrem(1);
+        }
+      }
+
+      &.active {
+        .mat-cell {
+          background-color: $c-primary1;
+          color: $c-white;
+        }
+      }
+    }
+
+    
+
+    .mat-header-cell {
+      background-color: $c-comp2;
+      border: calcrem(1) solid $c-comp3;
+      color: $c-primary3;
+    }
+
+    .mat-cell {
+      background-color: $c-white;
+      color: $c-black;
+      border: none;
+      border-left: calcrem(1) solid $c-comp3;
+      border-top: calcrem(1) solid $c-comp3;
+
+      color: $c-grey-8;
+      font-size: calcrem(12);
+      font-weight: 400;
+      vertical-align: middle;
+      
+     
+
+      &-revert {
+        display: revert !important;
+      }
+
+      &.expandable {
+        border: none;
+        padding: 0 !important; // fucking angular material
+
+        #{$self}-expansion {
+          &.expanded {
+            border: calcrem(1) solid $c-comp3;
+            border-bottom: none;
+          }
+        }
+      }
+
+
+      &.created {
+        color: $c-primary1;
+      }
+
+      &.not-created {
+        color: $c-notice;
+      }
+
+      &.danger {
+        color: $c-error;
+      }
+
+      
+    }
+
+    .mat-header-cell, .mat-cell {
+      border-right-width: 0;
+      font-size: calcrem(12);
+      font-weight: 500;
+      padding: calcrem(3.04) calcrem(4) !important;
+
+      &:last-of-type {
+        border-right: calcrem(1) solid $c-comp3;
+      }
+    }
+  
+  
+  
+
+    tr.mat-row,
+    tr.mat-header-row {
+      height: fit-content;
+    }
+
+    tr.mat-row {
+      border-top: calcrem(2) solid $c-grey-2;
+
+      // &:first-of-type {
+      //   border-top: none;
+      // }
+
+      &:first-of-type {
+        .mat-cell {
+          border-top: none;
+        }
+      }
+
+      &:last-of-type {
+        .mat-cell {
+          border-bottom: calcrem(1) solid $c-comp3;
+        }
+      }
+    }
+
+    tr.mat-header-row {
+      border-bottom: calcrem(2) solid $c-grey-1;
+      display: table-row;
+      .icp-table__table-checkbox {
+        text-align: center;
+      }
+    }
+
+    &.selectable {
+      tr.mat-row {
+        cursor: pointer;
+        &:hover {
+          background-color: $c-comp2;
+          border-bottom: calcrem(2) solid $c-primary1;
+        }
+      }
+    }
+  }
+
+  // Custom paginator
+  .mat-paginator {
+    background-color: $c-white;
+    margin-top: auto;
+
+    &-container {
+      justify-content: space-between;
+    }
+
+    &-page-size {
+      font-size: calcrem(12);
+    }
+
+    &-range-actions {
+      font-size: calcrem(12);
+    }
+
+    .mat-icon-button {
+      align-items: center;
+      border-radius: 0;
+      display: flex;
+      font-size: calcrem(16);
+      margin: calcrem(8) calcrem(4);
+      width: calcrem(20);
+      height: calcrem(20);
+    }
+
+    .mat-paginator-icon {
+      bottom: calcrem(3);
+      display: none;
+      position: relative;
+      width: calcrem(18);
+    }
+
+    &-navigation-first {
+      .mat-button-wrapper {
+        &::after {
+          content: "\e9bd";
+          font-family: 'perseo-icons' !important;
+          line-height: 1.3;
+        }
+      }
+    }
+  
+    &-navigation-previous {
+      .mat-button-wrapper {
+        &::after {
+          content: "\e99a";
+          font-family: 'perseo-icons' !important;
+          line-height: 1.3;
+        }
+      }
+    }
+  
+    &-navigation-next {
+      .mat-button-wrapper {
+        &::after {
+          content: "\e99b";
+          font-family: 'perseo-icons' !important;
+          line-height: 1.3;
+        }
+      }
+    }
+  
+    &-navigation-last {
+      .mat-button-wrapper {
+        &::after {
+          content: "\e9be";
+          font-family: 'perseo-icons' !important;
+          line-height: 1.3;
+        }
+        
+      }
+    }
+  }
+
+  // Modificador
+  &--selectable {
+    tr.mat-row {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $c-grey-7;
+      }
+    }
+  }
+
+  &--fixed {
+    table-layout: fixed;
+  }
+}
+
+// Icon Arrow
+.mat-sort-header{
+  &-container{
+      width: 100%;
+  }
+  &-content{
+      width: 100%;
+      justify-content: space-between;
+  }
+}
+
+
+#mat-checkbox-1 {
+  display: none;
+}

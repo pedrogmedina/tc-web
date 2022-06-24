@@ -1,0 +1,116 @@
+// Displays
+
+$display-map: (
+  "block": block,
+  "none": none,
+  "flex": flex,
+  "initial" : initial,
+  "inline": inline,
+  "inline-block": inline-block,
+  "inline-flex": inline-flex,
+  "grid": grid,
+  "table": table,
+  "table-cell": table-cell,
+  "revert" : revert,
+  "contents" : contents
+);
+
+$display-list: map-values($display-map);
+
+@each $value in $display-list {
+  .u-ds-#{$value} {
+    $res: map-get($display-map, $value);
+    $property: "display";
+    #{$property}: $res;
+
+    @include sufixes($property, $res);
+  }
+}
+
+$justify-map: (
+  "start": start,
+  "end": end,
+  "between": space-between,
+  "around": space-around,
+  "center": center,
+  "baseline" : baseline
+);
+
+$justify-list: map-keys($justify-map);
+
+@each $value in $justify-list {
+  .u-justify-#{$value} {
+    $res: map-get($justify-map, $value);
+    $property: "justify-content";
+    #{$property}: $res;
+
+    @include sufixes($property, $res);
+  }
+}
+
+@each $value in $justify-list {
+  .u-align-#{$value} {
+    $res: map-get($justify-map, $value);
+    $property: "align-items";
+    #{$property}: $res;
+
+    @include sufixes($property, $res);
+  }
+}
+
+
+$place-map: (
+  "start": start,
+  "end": end,
+  "between": space-between,
+  "around": space-around,
+  "center": center,
+);
+
+$place-list: map-keys($place-map);
+
+// TODO: place-content con dos valores
+@each $value in $place-list {
+  .u-place-#{$value} {
+    $res: map-get($justify-map, $value);
+    $property: "place-content";
+    #{$property}: $res;
+
+    @include sufixes($property, $res);
+  }
+}
+
+@each $first in $place-list {
+  $vertical: map-get($justify-map, $first); // primer valor
+  @each $second in $place-list {
+    $horizontal: map-get($justify-map, $second);
+
+    .u-place-#{$vertical}-#{$horizontal} {
+      $res: map-get($justify-map, $first) + ' ' + map-get($justify-map, $second);
+      $property: "place-content";
+      #{$property}: $res;
+
+      @include sufixes($property, $res);
+    }
+  }
+}
+
+$direction-map: (
+  "col": column,
+  "colrev": column-reverse,
+  "rev": revert,
+  "row": row,
+  "rowrev": row-reverse,
+);
+
+$dir-list: map-keys($direction-map);
+
+@each $value in $dir-list {
+  .u-dir-#{$value} {
+    $res: map-get($direction-map, $value);
+    $property: "flex-direction";
+    #{$property}: $res;
+
+    @include sufixes($property, $res);
+  }
+}

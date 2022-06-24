@@ -1,0 +1,28 @@
+// TEXT ALIGN UTILITY
+
+@mixin text-align() {
+  $text-align-list: map-values($text-align-map);
+
+  @each $value in $text-align-list {
+    .u-text-#{$value} {
+      text-align: $value;
+
+      @include sufixes(text-align, $value);
+    }
+  }
+}
+
+@include text-align();
+
+
+@mixin text-decoration() {
+  $text-decoration-list: map-values($text-decoration-map);
+
+  @each $value in $text-decoration-list {
+    .u-decor-#{$value} {
+      text-decoration: $value;
+    }
+  }
+}
+
+@include text-decoration();

@@ -1,0 +1,43 @@
+// Variables
+$bg-page-select: map-get($primary, "primary2");
+
+.c-pager {
+  align-items: center;
+  background-color: $c-comp1;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: calcrem(16);
+  padding: calcrem(8) calcrem(14);
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  &__item {
+    border-radius: calcrem(4);
+    color: $c-grey-8;
+    cursor: pointer;
+    font-size: calcrem(12);
+    padding: calcrem(4) calcrem(8);
+    text-decoration: none;
+
+    &.active {
+      background-color: $bg-page-select;
+      color: $c-white;
+    }
+  }
+
+  &__controls {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+}

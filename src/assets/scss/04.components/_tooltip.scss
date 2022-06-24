@@ -1,0 +1,59 @@
+// TOOLTIPS
+
+.c-tooltip {
+
+    background-color: $c-white;
+    border: calcrem(1) solid $c-primary1;
+    border-radius: calcrem(3);
+    color: $c-black;
+    // max-width: 300px;
+    padding: calcrem(6) calcrem(6);
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    width: calcrem(200);
+    z-index: 1;
+      
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-width: calcrem(5);
+      border-style: solid;
+      
+    }
+
+    &--bottom {
+
+      margin-left: calcrem(-150);
+      top: 110%;
+      left: 10%;
+
+
+      &::after {
+        margin-left: calcrem(-5);
+        bottom: 100%;
+        left: 85%;
+        border-color: transparent transparent $c-primary1 transparent;
+      }
+    }
+
+    // TODO: ajustar posiciones 
+    &--top {
+      margin-left: calcrem(-60);
+      bottom: 150%;
+      left: 50%;
+
+      &::after {
+        margin-left: calcrem(-5);
+        top: 100%;
+        left: 50%;
+        border-color: $c-primary1 transparent transparent transparent;
+      }
+    }
+
+    strong {
+      color: $c-grey-8;
+    }
+    
+}

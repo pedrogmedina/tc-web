@@ -1,0 +1,86 @@
+.e-btn {
+  align-items: center;
+  border: none;
+  border-radius: calcrem(4);
+  display: flex;
+  justify-content: center;
+  opacity: 0.9;
+  padding: calcrem(10) calcrem(16);
+
+  &:hover {
+    opacity: 1;
+  }
+  
+  // Tipos
+  &--primary {
+    @extend .e-btn;
+    background: $c-primary1;
+    color: $c-white;
+  }
+
+  &--secondary {
+    background: $c-secondary1;
+    color: $c-black;
+  }
+
+  &--tertiary {
+    @extend .e-btn;
+    background: transparent;
+    border: calcrem(1) solid $c-primary1;
+    color: $c-primary1;
+  }
+  &--grayish {
+    @extend .e-btn;
+    background: $c-primary2;
+    border: calcrem(1) solid $c-primary2;
+    color: $c-white;
+  }
+
+  &--transparent {
+    background-color: transparent;
+  }
+
+  &--light {
+    background-color: $c-white;
+    color: $c-primary1;
+
+    &:hover {
+      background-color: $c-primary1;
+      color: $c-white;
+    }
+  }
+
+  // Modificadores
+  &--h100 {
+    height: 100%;
+  }
+
+  &--md {
+    max-height: calcrem(28);
+  }
+
+  &--lg {
+    max-height: calcrem(32);
+  }
+
+  &--xl {
+    max-height: calcrem(40);
+    padding: calcrem(16) calcrem(24);
+  }
+
+  &--icon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      margin-right: calcrem(6);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .2;
+  }
+}

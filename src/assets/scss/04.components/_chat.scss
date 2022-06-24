@@ -1,0 +1,87 @@
+// CHAT COMPONENT
+
+.c-chat {
+
+  &__inbox {
+    overflow: hidden;
+  }
+
+  &__msgs {
+    @include setWidthAndHeight(100%, 35vh);
+    overflow: hidden;
+  }
+
+  &__history {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  &__sendarea {
+
+    display: grid; 
+    gap: 0 0; 
+    grid-auto-flow: row dense; 
+    grid-template-areas: "docs textarea sendbtn";
+    grid-template-columns: 0.2fr 2.5fr 0.3fr; 
+    height: auto;
+    
+
+    &-docs {
+      flex-direction: column;
+      grid-area: docs;
+    }
+
+    &-imgs {
+      display: grid;
+      width: 100%;
+    }
+
+    &-textarea {
+      grid-area: textarea;
+
+      .msg-box {
+        background: none;
+        border: none;
+        height: 100%;
+        padding-top: calcrem(12);
+        resize: none;
+        width: 100%;
+
+        &:focus-visible {
+          border: none;
+          outline: none;
+        }
+
+      }
+    }
+
+    &-sendbtn {
+      display: grid;
+      grid-area: sendbtn;
+      height: calcrem(84);
+      margin: calcrem(4);
+      place-content: center center;
+
+      &:hover {
+        background-color: $c-over1;
+      }
+
+    }
+  }
+
+  &__message {
+    list-style-type: none;
+  }
+  
+  &__outgoing {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__user {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}

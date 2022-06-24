@@ -1,0 +1,37 @@
+@mixin position() {
+  $positions: map-values($position-map);
+
+  @each $value in $positions {
+    .u-pos-#{$value} {
+      position: $value;
+    }
+  }
+}
+
+@include position();
+
+
+@mixin arrange() {
+
+  $pos-map: (
+    "0" : 0,
+    "50" : 50%,
+    "100" : 100%
+  );
+
+  $arrangements: map-keys($arrangement-map);
+  $pos: map-keys($pos-map);
+
+  @each $value in $arrangements {
+    @each $percent in $pos {
+      .u-#{$value}-#{$percent} {
+        $property: map-get($arrangement-map, $value);
+        $res: map-get($pos-map, $percent);
+
+        #{$property}: $res;
+      }
+    }
+  }
+}
+
+@include arrange();

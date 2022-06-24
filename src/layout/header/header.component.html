@@ -1,0 +1,34 @@
+<header class="tc-header">
+    <div class="c-header">
+        <div class="o-container-lg p-flexcb">
+            <div class="c-header__logo">
+                <img class="u-size-per-100" src="./assets/media/caravantour2.svg" alt="Logo caravantour">
+            </div>
+            <div class="c-header__block ml-4">
+                <div class="c-list c-list--horizontal">
+                    <a class="c-list__item" (click)="ToggleSMenu()" [ngClass]="superMenu ? 'active' : ''">
+                        <p>
+                            Rutas destacadas
+                        </p>
+                        <i class="lnr" [ngClass]="superMenu ? 'lnr-chevron-up' : 'lnr-chevron-down'"></i>
+                    </a>
+                   <p class="c-list__item">
+                        Paises
+                    </p>
+                    <p class="c-list__item">
+                        Ofertas
+                    </p>
+                   <p class="c-list__item">
+                       Sobre Tourcaravan
+                    </p>
+                </div>
+            </div>
+            <div class="c-header__block">
+                <button class="e-btn--tertiary u-fs-14">
+                    Contacto
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<tc-supermenu *ngIf="superMenu"></tc-supermenu>

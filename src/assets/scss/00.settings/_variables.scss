@@ -1,0 +1,261 @@
+ // VARIABLES
+// Desde aquí controlamos la fuente del proyecto
+$font-family: 'Poppins', sans-serif;
+$font-size-main: 1rem;
+
+// Prefijo para el proyecto
+// Todos los componentes deben empezar por este prefijo seguido de un guíon + nameComponente.
+$prefix: '.tc';
+
+// Variables de colores.
+// Lo usaremos para las variables de colores o dentro de cada componente.
+$primary : (
+  "primary1" : #42C586,
+  "primary2" : #2F2F2F,
+  "primary3" : #686868
+);
+
+$secondary : (
+  "secondary1" : #BB9457,
+  "secondary2" : #99582A,
+  "secondary3" : #FFEAEE
+);
+
+// State 1 hace referencia a primary1 | 2 a primary 2 | error a $semantic(error)
+$state : (
+  "disabled1" : #CEDFF4,
+  "over1" : #236AC8,
+  "selected1" : #1E559D,
+  "disabled2" : #E5E5E5,
+  "over2" : #494F55,
+  "selected2" : #2A3441,
+  "disabled-error" : #FBB3B0,
+  "over-error" : #E22014,
+  "selected-error" : #BC1B11
+);
+
+$complementary : (
+  "comp1" : #F7F9FA,
+  "comp2" : #F6F6F6,
+  "comp3" : #DEE2E6,
+  "comp4" : #436187,
+  "comp5" : #FFE99D,
+  "comp6" : #A4D1FB,
+  "comp7" : #C4F8E8,
+  "accent" : #C28EBD,
+  "bgSite" : #F7F9FA,
+);
+
+$semantic : (
+  "warning-error" : #F06158,
+  "notice" : #EA9C0B,
+  "info" : #70D1E9,
+  "success" : #93E4BA,
+  "badge-info" : #E22014
+);
+
+$grey : (
+  "grey100" : #FCFCFC,
+  "grey200" : #F2F2F2,
+  "grey300" : #DDDDDD,
+  "grey400" : #A8A8A8,
+  "grey500" : #999999,
+  "grey600" : #707070,
+  "grey700" : #545454,
+  "grey800" : #383838,
+  "grey900" : #1C1C1C
+);
+
+$blackwhite : (
+  "black" : #000,
+  "white" : #FFF,
+  "transparent" : transparent
+);
+
+
+// Variables colores del proyecto
+// Se pueden añadir o quitar las necesarias para el desarrollo
+$c-primary1: map-get($primary, "primary1");
+$c-primary2: map-get($primary, "primary2");
+$c-primary3: map-get($primary, "primary3");
+
+$c-secondary1: map-get($secondary, "secondary1");
+$c-secondary2: map-get($secondary, "secondary2");
+$c-secondary3: map-get($secondary, "secondary3");
+
+$c-selected1: map-get($state, "selected1");
+$c-over1: map-get($state, "over1");
+$c-disabled2: map-get($state ,"disabled2");
+$c-selected2: map-get($state, "selected2");
+
+$c-comp1: map-get($complementary, "comp1");
+$c-comp2: map-get($complementary, "comp2");
+$c-comp3: map-get($complementary, "comp3");
+$c-comp4: map-get($complementary, "comp4");
+
+$c-grey-1: map-get($grey, "grey100");
+$c-grey-2: map-get($grey, "grey200");
+$c-grey-3: map-get($grey, "grey300");
+$c-grey-4: map-get($grey, "grey400");
+$c-grey-6: map-get($grey, "grey600");
+$c-grey-7: map-get($grey, "grey700");
+$c-grey-8: map-get($grey, "grey800");
+$c-grey-9: map-get($grey, "grey900");
+
+$c-white: map-get($blackwhite, "white");
+$c-black: map-get($blackwhite, "black");
+
+
+$c-success: map-get($semantic , "success");
+$c-info: map-get($semantic , "info");
+$c-notice: map-get($semantic , "notice");
+$c-error: map-get($semantic , "badge-info");
+
+$c-transparent: map-get($blackwhite, "transparent");
+
+// Mapa de sombras
+$shadows: (
+  "high": 0 0 20px rgba(215, 215, 215, 0.8),
+  "medium": 0 0 16px rgba(215, 215, 215, 0.6),
+  "low": 0 0 12px rgba(215, 215, 215, 0.4),
+  "box": 0 0 2px rgba(0, 0, 0, 0.14), //0px 0px 2px rgba(0, 0, 0, 0.14);
+  "sidebar": 0 0 10px rgba(57, 57, 57, 0.3),
+);
+
+
+// Puntos de ruptura
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+// Variables de bootstrap
+// $primary: rgb(0, 112, 156);
+// $c-secondary: black;
+// $c-success: green;
+// $c-grey-2: rgb(196, 88, 0);
+// $c-grey-7: yellow;
+// $c-shadow: red;
+// $c-light: white;
+// $c-dark: black;
+
+// $c-grey-7: #fff;
+// $c-grey-7: #002855;
+
+// Cambios theme de bootstrap
+// $theme-colors: (
+//   primary: $c-primary1,
+//   secondary: $c-secondary1,
+//   success: $c-success,
+//   info: $c-grey-2,
+//   warning: $c-grey-7,
+//   danger: $c-shadow,
+//   light: $c-light,
+//   dark: $c-dark
+// );
+
+$grid-breakpoints: (
+  sm: $bp-sm,
+  md: $bp-md,
+  lg: $bp-lg,
+  xl: $bp-xl,
+);
+
+
+// @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+//Mapa tamaños de fuentes solo para <p> o <span>
+$fontsize-map: (
+  "xxs": 10,
+  "xs": 12,
+  "sm": 14,
+  "md": 16,
+  "lg": 18,
+  "xl": 20,
+  "xxl": 22,
+);
+
+// Mapa tamaños cabeceras
+$headings-map: (
+  "h1" : 40,
+  "h2" : 32,
+  "h3" : 28,
+  "h4" : 24
+);
+
+// Mapa grosor de textos
+$fontweight-map: (
+  "300": 300,
+  "400": 400,
+  "500": 500,
+  "600": 600,
+  "700": 700,
+  "900": 900,
+);
+
+// Mapa para opacidades
+$opacity-map: (
+  0: 0,
+  25: 25,
+  50: 5,
+  75: 75
+);
+
+// Mapa para alinear textos
+$text-align-map: (
+  "center" : center,
+  "start" : start,
+  "end" : end,
+  "left" : left,
+  "right" : right,
+  "justify" : justify,
+  "justify-all" : justify-all
+);
+
+// Mapa para decorar textos
+$text-decoration-map: (
+  "overline" : overline,
+  "through" : line-through,
+  "under" : underline,
+  "underover" : underline overline,
+);
+
+// Mapa para cursores
+$cursor-map: (
+  "default" : default,
+  "pointer" : pointer,
+  "help" : help,
+  "progress" : progress,
+  "wait" : wait,
+  "none" : none,
+  "text" : text,
+  "copy" : copy,
+  "cell" : cell,
+  "move" : move,
+  "not-allowed" : not-allowed,
+  "col-resize" : col-resize,
+  "e-resize" : e-resize
+);
+
+// Mapa para posiciones
+$position-map: (
+  "absolute" : absolute,
+  "relative" : relative,
+  "fixed" : fixed,
+  "sticky" : sticky,
+  "inherit" : inherit,
+  "static" : static,
+  "initial" : initial
+);
+
+// Mapa arrangements
+$arrangement-map: (
+  "top" : top,
+  "start" : left,
+  "end" : right,
+  "bottom" : bottom
+);
+
+// URL Logo login (provisional)
+$logo-login : url("/assets/images/logo/logo_40.png");

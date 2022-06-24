@@ -1,0 +1,21 @@
+/* FLOAT UTILITY */
+
+$float-map: (
+  "start" : left,
+  "end" : right,
+  "none" : none
+);
+
+$float-keys: map-keys($float-map);
+
+@each $value in $float-keys {
+    .u-float-#{$value} {
+      $res: map-get($float-map, $value);
+      $property: "float";
+
+      #{$property}: $res;
+
+      @include sufixes($property, $res);
+
+    }
+}

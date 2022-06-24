@@ -1,0 +1,47 @@
+// Font utilities
+
+/* FONT SIZE */
+
+@mixin font-size() {
+  $font-size-list: map-values($fontsize-map);
+
+  @each $value in $font-size-list {
+    .u-fs-#{$value} {
+      font-size: calcrem($value);
+
+      @include sufixes(font-size, calcrem($value));
+    }
+  }
+}
+
+@include font-size();
+
+/* FONT WEIGHT */
+@mixin font-weight() {
+  $font-weight-list: map-values($fontweight-map);
+
+  @each $value in $font-weight-list {
+    .u-fw-#{$value} {
+      font-weight: $value;
+    }
+  }
+}
+
+@include font-weight();
+
+/* HEADINGS */
+
+@mixin headings() {
+  $headings-keys: map-keys($headings-map);
+
+  @each $value in $headings-keys {
+
+    $head: map-get($headings-map, $value);
+
+    .u-fs-#{$value} {
+      font-size: calcrem($head);
+    }
+  }
+}
+
+@include headings();

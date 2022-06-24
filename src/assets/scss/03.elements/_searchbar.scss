@@ -1,0 +1,57 @@
+.e-searchbar {
+  $self: &;
+
+  // Propiedades básicas
+  align-items: center;
+  border: calcrem(1) solid $c-grey-4;
+  border-radius: calcrem(4);
+  display: flex;
+  width: 100%;
+
+  &:hover,
+  &:focus-within {
+    border-color: $c-primary1;
+    border-width: calcrem(2);
+
+    .icon-close {
+      visibility: visible;
+      color: $c-primary1;
+    }
+  }
+
+  &__icon {
+    margin: calcrem(8) calcrem(10);
+  }
+
+  &__input {
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    .input {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      font-size: calcrem(16);
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:not([value=""]) {
+        #{$self} {
+          border-color: $c-primary1;
+        }
+      }
+    }
+    .icon-close {
+      background: $c-white;
+      padding-left: calcrem(4);
+      padding-right: calcrem(8);
+      visibility: hidden;
+      cursor: pointer;
+    }
+  }
+}

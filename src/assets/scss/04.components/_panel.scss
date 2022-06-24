@@ -1,0 +1,39 @@
+
+.c-panel {
+  background-color: $c-white;
+  border-radius: calcrem(4);
+  // margin-bottom: calcrem(32);
+  min-height: max-content;
+  // padding-bottom: calcrem(16);
+  overflow: hidden;
+
+  &__title {
+    align-items: center;
+    border-bottom: calcrem(1) solid $c-grey-2;
+    display: flex;
+    padding: calcrem(8) calcrem(16);
+
+    // [class*="icon-"] {
+    //   margin-right: calcrem(8);
+    // }
+
+    &-iconinfo {
+      margin-right: calcrem(8);
+    }
+  }
+
+  &--auto {
+    min-height: initial;
+  }
+
+  &--full {
+    min-height: 80vh;
+    height: 85vh;
+  }
+  &--right {
+    border-radius: 12px 0 0 12px;
+  }
+  &--left {
+    border-radius: 0 12px 12px 0;
+  }
+}
