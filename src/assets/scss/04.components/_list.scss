@@ -44,7 +44,7 @@ $map-size: (
     }
     
     &:hover {
-      background-color: rgba($c-grey-4, 0.1);
+      box-shadow: 0 0 12px rgba(215, 215, 215, 0.4);
     }
 
     &:last-child {

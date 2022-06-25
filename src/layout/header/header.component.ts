@@ -7,7 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public superMenu : boolean = true;
+  public superMenu : boolean = false;
+
+  headermenu: any[] = [
+    {
+      "page" : "Inicio"
+    },
+    {
+      "page" : "Rutas destacadas", "submenu": true
+    },
+    {
+      "page" : "Paises"
+    },
+    {
+      "page" : "Sobre Tourcaravan"
+    },
+  ]
 
   constructor() { }
 

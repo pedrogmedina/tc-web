@@ -33,6 +33,24 @@ $c: $prefix + '-smenu';
 
         .desc {
             margin: 0 calcrem(12);
+
+            h2 {
+                font-size: calcrem(14);
+                font-weight: 600;
+                margin-bottom: calcrem(4);
+            }
+
+            p {
+                @include ellipsis-text;
+            }
         }
+    }
+
+    &__nav {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        column-gap: 10px;
+        row-gap: 15px;
+        margin: calcrem(14) 0;
     }
 }

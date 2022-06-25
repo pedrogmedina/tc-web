@@ -6,21 +6,35 @@
             </div>
             <div class="c-header__block ml-4">
                 <div class="c-list c-list--horizontal">
+                    <!-- <a class="c-list__item" *ngFor="let i of headermenu">
+                        <p>
+                            {{i.page}}
+                        </p>
+
+                        <i class="lnr" *ngIf="i.submenu" [ngClass]="superMenu ? 'lnr-chevron-up' : 'lnr-chevron-down'"></i>
+                    </a> -->
+
+                    <a class="c-list__item" routerLink="/">
+                        <p>
+                           Inicio
+                        </p>
+                    </a>
                     <a class="c-list__item" (click)="ToggleSMenu()" [ngClass]="superMenu ? 'active' : ''">
                         <p>
                             Rutas destacadas
                         </p>
                         <i class="lnr" [ngClass]="superMenu ? 'lnr-chevron-up' : 'lnr-chevron-down'"></i>
                     </a>
-                   <p class="c-list__item">
-                        Paises
-                    </p>
-                    <p class="c-list__item">
-                        Ofertas
-                    </p>
-                   <p class="c-list__item">
-                       Sobre Tourcaravan
-                    </p>
+                    <a class="c-list__item" routerLink="/countries">
+                        <p>
+                            Paises
+                        </p>
+                    </a>
+                    <a class="c-list__item">
+                        <p>
+                            Sobre Tourcaravan
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="c-header__block">
