@@ -9,6 +9,11 @@ import { SupermenuComponent } from 'src/layout/header/components/supermenu/super
 import { CountriesComponent } from './countries/countries.component';
 import { HomeComponent } from './home/home.component';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -20,7 +25,9 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
