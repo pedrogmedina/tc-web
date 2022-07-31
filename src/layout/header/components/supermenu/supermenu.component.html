@@ -4,58 +4,17 @@
             <div class="col-xl-6 m-0">
                 <p class="u-color-primary1 u-fs-14 u-fw-600 ml-3">Destacadas</p>
                 <div class="row m-0 p-0">
-                    <div class="col-xl-6">
-                        <div class="tc-smenu__card">
+                    <div class="col-xl-6" [ngClass]="t.feat == false ? 'u-ds-none' : ''" *ngFor="let t of data" >
+                        <div class="tc-smenu__card" *ngIf="(t.feat == true)">
                             <div class="thumb u-radius-8">
-                                <img src="./assets/media/pictures/loira-one-medium.jpg" alt="">
+                                <img src="{{t.thumb}}" alt="">
                             </div>
                             <div class="desc">
                                 <h2>
-                                    Ruta del Loira
+                                    {{t.title}}
                                 </h2>
                                 <p class="u-fs-12">
-                                    Lorem ipsum dolor sit amet consectetur. Una descripción super larga que ya ves que larga es.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tc-smenu__card">
-                            <div class="thumb u-radius-8">
-                                <img src="./assets/media/pictures/loira-one-medium.jpg" alt="">
-                            </div>
-                            <div class="desc">
-                                <h2>
-                                    La camarga
-                                </h2>
-                                <p class="u-fs-12">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="tc-smenu__card">
-                            <div class="thumb u-radius-8">
-                                <img src="./assets/media/pictures/alsacia-one-medium.jpg" alt="">
-                            </div>
-                            <div class="desc">
-                                <h2>
-                                    Alsacia
-                                </h2>
-                                <p class="u-fs-12">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tc-smenu__card">
-                            <div class="thumb u-radius-8">
-                                <img src="./assets/media/pictures/loira-one-medium.jpg" alt="">
-                            </div>
-                            <div class="desc">
-                                <h2>
-                                    Ruta del Loira
-                                </h2>
-                                <p class="u-fs-12">
-                                    Lorem ipsum dolor sit amet consectetur.
+                                   {{t.excerpt}}
                                 </p>
                             </div>
                         </div>
@@ -89,3 +48,7 @@
         </div>
     </div>
 </div>
+<!-- 
+<code>
+    <pre>{{data |json}}</pre>
+</code> -->

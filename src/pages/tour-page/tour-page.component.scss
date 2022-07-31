@@ -1,0 +1,24 @@
+@import '../../assets/scss/00.settings/variables';
+@import '../../assets/scss/02.tools/all-tools';
+
+$c: $prefix  + '-tourpage';
+
+#{$c} {
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: calcrem(16) calcrem(16) 0;
+    }
+    
+    &__banner {
+        border-radius: calcrem(10);
+        overflow: hidden;
+        @include setWidthAndHeight;
+
+        img {
+            @include setWidthAndHeight;
+        }
+    }
+}

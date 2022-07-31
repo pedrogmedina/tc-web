@@ -4,8 +4,15 @@
 $c: $prefix + '-smenu';
 
 #{$c} {
-    box-shadow: 0px 15px 28px -25px rgb(0 0 0 / 12%);
     animation: fade-in ease-in 300ms;
+    background-color: $c-white;
+    box-shadow: 0px 15px 28px -25px rgb(0 0 0 / 12%);
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: calcrem(100);
+    width: 100%;
+    z-index: 2;
 
     &__card {
         border: calcrem(3) solid $c-white;

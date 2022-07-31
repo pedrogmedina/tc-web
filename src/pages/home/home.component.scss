@@ -1,0 +1,22 @@
+@import '../../assets/scss/00.settings/variables';
+@import '../../assets/scss/02.tools/all-tools';
+
+$c: $prefix  + '-home';
+
+#{$c} {
+    margin: calcrem(16) 0;
+    width: 100%;
+    
+    &__fsect {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 180px 180px;
+        grid-auto-flow: column;
+
+        div {
+            &:first-child {
+                grid-row: 1 / 3;
+            }
+        }
+    }
+}

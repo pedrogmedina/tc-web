@@ -1,0 +1,89 @@
+<div class="">
+    <div class="o-container-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-4 p-2 u-bg-comp1">
+                    <p class="u-fs-12 u-color-primary1 u-fw-600">
+                        <span class="u-fs-12 u-color-primary3 u-fw-500">Inicio / Rutas / </span>
+                        {{data.title}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="tc-tourpage container-lg">
+    
+    <div class="row">
+        <div class="col-6 tc-tourpage__info">
+            <div>
+                <div class="mb-3">
+                    <h1 class="u-color-primary1 u-fs-22">{{data.title}}</h1>
+                    <p class="u-fs-12 u-fw-600">
+                        {{ data.excerpt }}
+                    </p>
+                </div>
+                <p>
+                    {{ data.description }}
+                </p>
+            </div>
+
+            <div class="u-bg-comp1 my-2 p-flexcb">
+                <div class="p-flexcb m-2 u-size-per-70">
+                    <p class="u-fs-12">
+                        <i class="lnr lnr-clock"></i> {{ data.duration }} días.
+                    </p>
+                    <p class="u-fs-12">
+                        <i class="lnr lnr-pushpin"></i>
+                        {{ data.numSteps }} paradas
+                    </p>
+                    <p class="u-fs-12">
+                        {{ data.start }} <i class="lnr lnr-sync"></i> {{ data.end }}
+                    </p>
+
+                </div>
+                <button class="e-btn e-btn--primary u-fs-12">
+                    <i class="lnr lnr-map mr-2"></i> Mapa
+                </button>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="tc-tourpage__banner">
+                <img src="{{data.thumb}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container-lg">
+    <div class="row">
+        <div class="col-12">
+            <p>
+                ¡Comenzamos!
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <code>
+                <pre>
+                    {{obj | json}}
+                </pre>
+            </code>
+        </div>
+        <div class="col-12">
+            <p>
+                {{ obj.s1 }}
+            </p>
+        </div>
+    </div>
+</section>
+<hr>
+
+<code>
+    <pre>
+        {{data | json}}
+    </pre>
+</code>
