@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Tour } from 'src/models/tour';
+import { ToursService } from 'src/services/tours.service';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { DataTourService } from 'src/services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @Output() newItemEvent = new EventEmitter<Number>();
+
+  data: any = [];
+  tourId: number | undefined = 2;
+  
+  constructor(
+    private toursService: ToursService,
+    private db: AngularFireDatabase,
+    private dataTourService: DataTourService
+  ) { }
 
   ngOnInit(): void {
+    this.getData();
   }
 
+  addNewItem(tourId: any) {
+    this.newItemEvent.emit(tourId);
+  }
+
+  getData() {
+    const ref = this.db.list("infoRoutes");
+    ref.valueChanges().subscribe((data: any) => {
+      this.data = data;
+      
+      console.log(this.data);
+
+    })
+  }
+  
+  getTourPos($value: number) {
+    this.dataTourService.sendTourId($value);
+  }
 }
