@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tour } from 'src/models/tour';
 import { ToursService } from 'src/services/tours.service';
-import { map } from 'rxjs';
+import { map, zip } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
@@ -26,7 +26,6 @@ export class SupermenuComponent implements OnInit {
   
   ngOnInit(): void {
     this.getData();
-    console.log("Cargado");
   }
   
   // updateTours() : void {
@@ -51,9 +50,9 @@ export class SupermenuComponent implements OnInit {
     const ref = this.db.list("infoRoutes");
     ref.valueChanges().subscribe((data: any) => {
       this.data = data;
-      console.log(Object.keys(data))
+      
+      console.log(this.data);
+
     })
   }
-
-  getFeaturedTours() {}
 }
