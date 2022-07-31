@@ -56,4 +56,46 @@ $map-size: (
       color: $c-white;
     }
   }
+
+  &__card {
+    background: $c-comp1;
+    border: calcrem(2) solid $c-comp1;
+    border-radius: calcrem(6);
+    margin-bottom: calcrem(32);
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: $sh-low;
+    }
+
+    .thumb {
+      border-radius: 0.625rem;
+      float: left;
+      height: calcrem(130);
+      overflow: hidden;
+      position: relative;
+      margin-right: 1rem;
+      width: calcrem(210);
+
+      img {
+        @include setWidthAndHeight(100%, 100%);
+      }
+
+      &__flag {
+        position: absolute;
+        right: 5%;
+        height: calcrem(22);
+        top: 5%;
+      }
+    }
+
+    .body {
+      display: flex;
+      height: calcrem(130);
+      margin: 0;
+      padding: calcrem(6) calcrem(16) calcrem(6) 0;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
 }

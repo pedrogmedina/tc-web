@@ -7,9 +7,15 @@
   opacity: 0.9;
   padding: calcrem(10) calcrem(16);
 
-  &:hover {
-    opacity: 1;
+  @mixin hover-btn {
+    &:hover {
+      background-color: $c-white;
+      box-shadow: 0 0 12px rgba(215, 215, 215, 0.4);
+      opacity: 1;
+    }
   }
+
+  @include hover-btn;
   
   // Tipos
   &--primary {
@@ -40,6 +46,13 @@
     background-color: transparent;
   }
 
+  &--nobtn {
+    background-color: transparent;
+    border: none;
+
+    @include hover-btn;
+  }
+
   &--light {
     background-color: $c-white;
     color: $c-primary1;
@@ -48,24 +61,6 @@
       background-color: $c-primary1;
       color: $c-white;
     }
-  }
-
-  // Modificadores
-  &--h100 {
-    height: 100%;
-  }
-
-  &--md {
-    max-height: calcrem(28);
-  }
-
-  &--lg {
-    max-height: calcrem(32);
-  }
-
-  &--xl {
-    max-height: calcrem(40);
-    padding: calcrem(16) calcrem(24);
   }
 
   &--icon {

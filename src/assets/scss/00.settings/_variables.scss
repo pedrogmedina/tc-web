@@ -113,6 +113,8 @@ $c-error: map-get($semantic , "badge-info");
 
 $c-transparent: map-get($blackwhite, "transparent");
 
+$sh-low : 0 0 12px rgba(215, 215, 215, 0.4);
+
 // Mapa de sombras
 $shadows: (
   "high": 0 0 20px rgba(215, 215, 215, 0.8),
