@@ -14,7 +14,7 @@
 </div>
 
 <section class="tc-tourpage container-lg">
-    
+
     <div class="row">
         <div class="col-6 tc-tourpage__info">
             <div>
@@ -59,24 +59,45 @@
 
 <section class="container-lg">
     <div class="row">
-        <div class="col-12">
-            <p>
-                ¡Comenzamos!
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <code>
-                <pre>
-                    {{obj | json}}
-                </pre>
-            </code>
-        </div>
-        <div class="col-12">
-            <p>
-                {{ obj.s1 }}
-            </p>
+        <div class="col-12" *ngFor="let item of data.steps; index as i; first as isFirst">
+            <div class="c-accordion" *ngIf="!isFirst">
+                <div class="c-accordion__head" (click)="collapsed[i] = !collapsed[i]">
+                    <h3 class="p-flexcs u-color-secondary1 u-fs-16 u-fw-500">
+                        <span class="u-fs-h1 u-color-primary1 u-fw-600 u-me-4">
+                            {{ i }}
+                        </span>
+                        {{ item.title }}
+                    </h3>
+
+                    <div class="u-m-3">
+                        <i class="lnr" [ngClass]="collapsed[i] ? 'lnr-chevron-up' : 'lnr-chevron-down'"></i>
+                    </div>
+                </div>
+
+                <div class="c-accordion__ctn" *ngIf="collapsed[i]">
+                    <div class="row">
+                        <div class="col-xl-2">
+                            <div class="e-avatar--full">
+                                <img class="e-avatar__img" src="{{item.thumb}}" alt="Mulhouse ruta por Alsacia">
+                            </div>
+                        </div>
+                        <div class="col-xl-10">
+                            <p class="u-fs-14" [innerHtml]="item.intro"></p>
+
+                            <div class="e-pill--brown u-mt-2">
+                                <p class="e-pill__el u-fs-12">
+                                    <i class="lnr lnr-car"></i>
+                                    Pista patinaje
+                                </p>
+                                <p class="e-pill__el u-fs-12">
+                                    <i class="lnr lnr-home"></i>
+                                    Camping De l'ill
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -84,6 +105,6 @@
 
 <code>
     <pre>
-        {{data | json}}
+        {{data.steps | json}}
     </pre>
 </code>

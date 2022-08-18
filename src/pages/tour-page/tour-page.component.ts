@@ -11,8 +11,14 @@ export class TourPageComponent implements OnInit {
 
   public data: any = [];
   public tourNumber: number = 0;
-  public tourSteps: any = [];
-  public obj: any = [];
+
+  // for steps
+  public dataSteps: any = [];
+  public step: any = [];
+
+  //for UI
+  public collapsed : boolean [] = [];
+  public allCollapsed : boolean = false;
 
   constructor(
     private db: AngularFireDatabase,
@@ -25,20 +31,24 @@ export class TourPageComponent implements OnInit {
 
   public getTourId() {
     this.dataTourService.defTourId.subscribe(id => this.tourNumber = id);
-
-    
     this.getData();
+    this.getSteps();
   }
 
   public getData() {
-    const ref = this.db.list("infoRoutes");
+    const ref = this.db.list("/infoRoutes");
     ref.valueChanges().subscribe((data: any) => {
       this.data = data[this.tourNumber];
-      
-      this.obj = this.data.steps;
-    
-      console.log("dataNum es", this.data)
-      console.log("Obj es:", this.obj);
+      console.log("data es", this.data)
+    })
+  }
+
+  public getSteps() {
+    const ref = this.db.list("/infoSteps");
+    ref.valueChanges().subscribe((data: any) => {
+      this.dataSteps = data[this.tourNumber];
+      console.log("dataSteps es", this.dataSteps);
+
     })
   }
 

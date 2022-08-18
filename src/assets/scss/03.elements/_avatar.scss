@@ -1,4 +1,12 @@
 .e-avatar {
+  border-radius: calcrem(10);
+  overflow: hidden;
+  
+  &--full {
+    @extend .e-avatar;
+    @include setWidthAndHeight;
+  }
+
   &__chat {
     height: calcrem(26);
     width: calcrem(26);

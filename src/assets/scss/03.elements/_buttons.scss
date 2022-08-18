@@ -2,6 +2,7 @@
   align-items: center;
   border: none;
   border-radius: calcrem(4);
+  cursor: pointer;
   display: flex;
   justify-content: center;
   opacity: 0.9;
@@ -9,8 +10,6 @@
 
   @mixin hover-btn {
     &:hover {
-      background-color: $c-white;
-      box-shadow: 0 0 12px rgba(215, 215, 215, 0.4);
       opacity: 1;
     }
   }

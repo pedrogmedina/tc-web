@@ -1,53 +1,22 @@
 $bg-pill-light: map-get($secondary, "secondary1");
 
 .e-pill {
-  align-items: center;
-  display: flex;
-  
-  &__label {
-    color: $c-primary2;
-    font-size: calcrem(12);
-    font-weight: 500;
-    margin-right: calcrem(6);
+  @include center-items(center, center);
+  border-radius: calcrem(4);
+  padding: calcrem(4) 0;
+  width: fit-content;
 
-    &--ellipsis {
-      @extend .e-pill__label;
-      @include ellipsis-word(100px);
+  &__el {
+    padding: 0 calcrem(8);
+
+    &:not(:first-child) {   
+      border-left: calcrem(1) solid $c-secondary1;
     }
   }
 
-  &__button {
-    border-radius: calcrem(2);
-    cursor: pointer;
-    font-size: calcrem(12);
-    font-weight: 600;
-    padding: calcrem(4) calcrem(8);
-    width: fit-content;
-    &--light {
-      background-color: $bg-pill-light;
-    }
-  }
-  &__badge-info{
-    width: 8px;
-    height: 8px;
-    border-radius: 5px;
-    top: 2px;
-    right: 7px;
-  }
-
-  &__img {
-    &--circular {
-      border-radius: 50%;
-      overflow: hidden;
-    }
-
-    &--icon {
-        height: calcrem(22);
-        width: calcrem(22);
-    }
-  }
-
-  &--disabled {
-    cursor: not-allowed;
+  &--brown {
+    @extend .e-pill;
+    background-color: rgba($c-secondary1, 0.12);
+    color: $c-secondary1;
   }
 }

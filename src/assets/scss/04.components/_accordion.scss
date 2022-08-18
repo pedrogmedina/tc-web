@@ -1,0 +1,24 @@
+.c-accordion {
+    margin-top: calcrem(16);
+
+    &__head {
+        @include center-items(center, space-between);
+        background-color: rgba($c-primary1, 0.1);
+        border-radius: calcrem(10);
+        cursor: pointer;
+        padding: 0 calcrem(16);
+
+        &:hover {
+            background-color: rgba($c-primary1, 0.12);
+            transition: 0.2s;
+
+            .lnr {
+                color: $c-primary1;
+            }
+        }
+    }
+
+    &__ctn {
+        padding: calcrem(16) calcrem(4);
+    }
+}
