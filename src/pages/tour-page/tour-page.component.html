@@ -56,9 +56,8 @@
     </div>
 </section>
 
-
 <section class="container-lg">
-    <div class="row">
+    <div class="row u-mt-3">
         <div class="col-12" *ngFor="let item of data.steps; index as i; first as isFirst">
             <div class="c-accordion" *ngIf="!isFirst">
                 <div class="c-accordion__head" (click)="collapsed[i] = !collapsed[i]">
@@ -85,14 +84,26 @@
                             <p class="u-fs-14" [innerHtml]="item.intro"></p>
 
                             <div class="e-pill--brown u-mt-2">
-                                <p class="e-pill__el u-fs-12">
+                                <p class="e-pill__el u-fs-12" *ngIf="item.hight1">
                                     <i class="lnr lnr-car"></i>
-                                    Pista patinaje
+                                    {{item.hight1}}
                                 </p>
-                                <p class="e-pill__el u-fs-12">
+                                <p class="e-pill__el u-fs-12" *ngIf="item.hight2">
                                     <i class="lnr lnr-home"></i>
-                                    Camping De l'ill
+                                    {{item.hight2}}
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <p class="u-py-4" [innerHtml]="item.text1">
+                            </p>
+                        </div>
+                        <div class="col-xl-2">
+                            <div class="e-avatar--full">
+                                <img class="e-avatar__img" src="{{item.thumb2}}" alt="Mulhouse ruta por Alsacia">
                             </div>
                         </div>
                     </div>
