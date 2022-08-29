@@ -18,7 +18,6 @@ export class TourPageComponent implements OnInit {
 
   //for UI
   public collapsed : boolean [] = [];
-  public allCollapsed : boolean = false;
 
   constructor(
     private db: AngularFireDatabase,

@@ -19,4 +19,16 @@ $bg-pill-light: map-get($secondary, "secondary1");
     background-color: rgba($c-secondary1, 0.12);
     color: $c-secondary1;
   }
+
+  &--sky {
+    @extend .e-pill;
+    background-color: rgba($c-comp4, 0.12);
+    color: $c-comp4;
+  }
+
+  &--green {
+    @extend .e-pill;
+    background-color: rgba($c-success, 0.12);
+    color: $c-success;
+  }
 }

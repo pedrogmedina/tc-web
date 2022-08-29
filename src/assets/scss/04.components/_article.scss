@@ -1,0 +1,11 @@
+.c-article {
+    @include setWidthAndHeight;
+
+    &__img {
+        height: calcrem(260);
+        
+        > img {
+            object-fit: cover;
+        }
+    }
+}

@@ -27,8 +27,15 @@ body {
   }
 
   a {
+    color: inherit;
     &:hover {
-      color: initial;
+      color: inherit;
+      opacity: 0.8;
     }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
   }
 }

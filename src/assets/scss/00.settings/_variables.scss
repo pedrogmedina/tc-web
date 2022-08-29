@@ -50,7 +50,7 @@ $semantic : (
   "warning-error" : #F06158,
   "notice" : #EA9C0B,
   "info" : #70D1E9,
-  "success" : #93E4BA,
+  "success" : #0c964e,
   "badge-info" : #E22014
 );
 
@@ -93,6 +93,7 @@ $c-comp2: map-get($complementary, "comp2");
 $c-comp3: map-get($complementary, "comp3");
 $c-comp4: map-get($complementary, "comp4");
 $c-comp5: map-get($complementary, "comp5" );
+$c-comp6: map-get($complementary, "comp6" );
 
 $c-grey-1: map-get($grey, "grey100");
 $c-grey-2: map-get($grey, "grey200");

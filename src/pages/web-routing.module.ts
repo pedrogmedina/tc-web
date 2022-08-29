@@ -7,8 +7,10 @@ import { TourPageComponent } from './tour-page/tour-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'tour/:name', component: TourPageComponent },
   { path: 'countries', component: CountriesComponent },
-  { path: 'tour/:name', component: TourPageComponent }
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
