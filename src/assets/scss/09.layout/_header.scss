@@ -1,0 +1,25 @@
+.c-header {
+    align-items: center;
+    display: flex;
+    padding: 0;
+    width: 100%;
+
+    &__block {
+        align-items: center;
+        display: flex;
+    }
+    
+    &__logo {
+        height: auto;
+        width: calcrem(140);
+
+        img {
+            height: 100%;
+        }
+
+        @include xs-device {
+            width: calcrem(110);
+        }
+    }
+}
+

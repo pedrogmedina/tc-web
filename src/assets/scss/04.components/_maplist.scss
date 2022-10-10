@@ -1,0 +1,31 @@
+.c-maplist {
+    border: calcrem(1) solid $c-comp3;
+    border-radius: calcrem(8);
+    margin-top: calcrem(90);
+
+    &__aside {
+        position: sticky;
+        top: calcrem(90);
+    }
+
+    &__item {
+        position: relative;
+        padding-left: calcrem(12);
+
+        // &::before {
+        //     background-color: $c-white;
+        //     border: calcrem(1) solid $c-primary2;
+        //     border-radius: calcrem(25);
+        //     content: '';
+        //     @include setWidthAndHeight(12px, 12px);
+        //     display: block;
+        //     position: absolute;
+        //     left: 0;
+        //     top: calcrem(3);
+        // }
+
+        &:hover {
+            color: $c-primary1;
+        }
+    }
+}
