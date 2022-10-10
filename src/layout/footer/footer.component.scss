@@ -1,0 +1,19 @@
+@import '../../assets/scss/00.settings/variables';
+@import '../../assets/scss/02.tools/all-tools';
+
+$c : $prefix + '-footer';
+
+#{$c} {
+    background-color: $c-grey-2;
+    padding: calcrem(32) calcrem(16) calcrem(16);
+
+    &__item {
+        font-size: calcrem(12);
+        font-weight: 500;
+        margin: calcrem(8) 0;
+    }
+
+    * {
+        color: $c-primary1;
+    }
+}

@@ -1,18 +1,11 @@
 <header class="tc-header">
     <div class="c-header">
         <div class="o-container-lg p-flexcb">
-            <div class="c-header__logo">
-                <img class="u-size-per-100" src="./assets/media/caravantour2.svg" alt="Logo caravantour">
+            <div class="c-header__logo u-my-1">
+                <img class="u-size-per-100" src="./assets/media/caravantour.svg" alt="Logo caravantour">
             </div>
-            <div class="c-header__block ml-4">
-                <div class="c-list c-list--horizontal">
-                    <!-- <a class="c-list__item" *ngFor="let i of headermenu">
-                        <p>
-                            {{i.page}}
-                        </p>
-
-                        <i class="lnr" *ngIf="i.submenu" [ngClass]="superMenu ? 'lnr-chevron-up' : 'lnr-chevron-down'"></i>
-                    </a> -->
+            <div class="c-header__block tc-header__nav ml-4">
+                <nav class="c-list c-list--horizontal">
 
                     <a class="c-list__item" routerLink="/">
                         <p>
@@ -35,15 +28,19 @@
                             Sobre Tourcaravan
                         </p>
                     </a>
-                </div>
+                </nav>
             </div>
             <div class="c-header__block">
-                <button class="e-btn--tertiary u-fs-14">
+                <!-- <button class="e-btn--secondary u-py-2 u-fs-14">
                     Contacto
-                    <i class="ml-1 lnr lnr-location"></i>
+                    <i class="ml-1 lnr lnr-phone-handset"></i>
+                </button> -->
+
+                <button class="e-btn--transparent tc-header__burguer u-py-2 u-fs-22">
+                    <i class="lnr lnr-menu"></i>
                 </button>
             </div>
         </div>
     </div>
 </header>
-<tc-supermenu *ngIf="superMenu"></tc-supermenu>
+<tc-supermenu (stateEvent)="stateSuperMenu($event)" *ngIf="superMenu"></tc-supermenu>
