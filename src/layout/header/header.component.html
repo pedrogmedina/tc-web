@@ -36,11 +36,13 @@
                     <i class="ml-1 lnr lnr-phone-handset"></i>
                 </button> -->
 
-                <button class="e-btn--transparent tc-header__burguer u-py-2 u-fs-22">
-                    <i class="lnr lnr-menu"></i>
+                <button class="e-btn--transparent tc-header__burguer u-py-2 u-fs-22" (click)="ToggleMobileMenu()">
+                    <i class="lnr" [ngClass]="mobileMenu ? 'lnr-cross' : 'lnr-menu'"></i>
                 </button>
             </div>
         </div>
     </div>
+
+    <tc-mobilemenu (stateEvent)="stateMobileMenu($event)" *ngIf="mobileMenu"></tc-mobilemenu>
 </header>
 <tc-supermenu (stateEvent)="stateSuperMenu($event)" *ngIf="superMenu"></tc-supermenu>

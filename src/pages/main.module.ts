@@ -14,10 +14,12 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
 import { TourPageComponent } from './tour-page/tour-page.component';
+import { MobilemenuComponent } from 'src/layout/header/components/mobilemenu/mobilemenu.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
+    MobilemenuComponent,
     SupermenuComponent,
     FooterComponent,
     AppComponent,

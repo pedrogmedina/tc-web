@@ -9,6 +9,7 @@ import { SupermenuComponent } from './components/supermenu/supermenu.component';
 export class HeaderComponent {
 
   public superMenu : boolean = false;
+  public mobileMenu : boolean = false;
 
   @ViewChild(SupermenuComponent) stateMenu: any;
 
@@ -33,7 +34,15 @@ export class HeaderComponent {
     this.superMenu = $event;
   }
 
+  stateMobileMenu($event: boolean) {
+    this.mobileMenu = $event;
+  }
+
   public ToggleSMenu() {
     this.superMenu = !this.superMenu;
+  }
+
+  public ToggleMobileMenu() {
+    this.mobileMenu = !this.mobileMenu;
   }
 }

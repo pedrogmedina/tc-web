@@ -1,0 +1,26 @@
+<div class="tc-mobmenu" (click)="hide()">
+    <div class="tc-mobmenu__wrap p-3" [ngClass]="leave">
+        <ul class="c-list">
+            <li class="c-list__item">
+                <a routerLink="/" (click)="hide()" class="u-fw-600 u-fs-22">
+                    Inicio
+                </a>
+            </li>
+            <li class="c-list__item">
+                <a class="u-fw-600 u-fs-22">
+                    Rutas destacadas
+                </a>
+            </li>
+            <li class="c-list__item">
+                <a  routerLink="/countries" (click)="hide()" class="u-fw-600 u-fs-22">
+                    Paises
+                </a>
+            </li>
+            <li class="c-list__item">
+                <a routerLink="/countries" (click)="hide()" class="u-fw-600 u-fs-22">
+                    Sobre Tourcaravan
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

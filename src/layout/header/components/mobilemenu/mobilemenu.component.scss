@@ -1,0 +1,16 @@
+@import '../../../../assets/scss/00.settings/variables';
+@import '../../../../assets/scss/02.tools/all-tools';
+
+$c : $prefix + '-mobmenu';
+
+#{$c} {
+    @include fixed-full-device(rgba($c-black, 0.7));
+    top: calcrem(50);
+
+    &__wrap {
+        animation: fade-in-right cubic-bezier(.61,0,1,.68) 100ms;
+        background-color: $c-white;
+        @include setWidthAndHeight(70%);
+        float: right;
+    }
+}
