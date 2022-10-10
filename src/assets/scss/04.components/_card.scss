@@ -6,6 +6,10 @@
   display: flex;
   position: relative;
 
+  @include xs-device{
+    display: block;
+  }
+
   &:hover {
     box-shadow: 0 0 calcrem(32) rgba($c-black, 0.06);
     transition: 0.4s;
@@ -16,6 +20,10 @@
     @include setWidthAndHeight(50%, 100%);
     z-index: 0;
     overflow: hidden;
+
+    @include xs-device {
+      @include setWidthAndHeight(100%, 50%);
+    }
 
       img {
         @include setWidthAndHeight(100%, 100%);
@@ -28,8 +36,17 @@
     width: 50%;
     z-index: 1;
 
+    @include xs-device {
+      padding: calcrem(16) calcrem(4);
+      width: 100%;
+    }
+
     * {
       margin-bottom: calcrem(16);
+
+      @include xs-device {
+        margin-bottom: calcrem(8);
+      }
     }
   }
 }

@@ -47,7 +47,7 @@
        </div>
 
        <div class="row">
-            <div class="col-3" *ngFor="let t of data, let indexOfelement=index;">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3" *ngFor="let t of data, let indexOfelement=index;">
               <div class="c-list__card p-1 u-cursor-pointer" routerLink="tour/{{t.pathName | lowercase}}" (click)="getTourPos(indexOfelement)">
                 <div class="thumb">
                     <img src="{{t.thumb}}" alt="">
