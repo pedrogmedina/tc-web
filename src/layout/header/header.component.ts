@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { SupermenuComponent } from './components/supermenu/supermenu.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   public superMenu : boolean = false;
+
+  @ViewChild(SupermenuComponent) stateMenu: any;
 
   headermenu: any[] = [
     {
@@ -26,7 +29,8 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  stateSuperMenu($event: boolean) {
+    this.superMenu = $event;
   }
 
   public ToggleSMenu() {

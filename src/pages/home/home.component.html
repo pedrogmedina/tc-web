@@ -1,14 +1,5 @@
 <div class="tc-home">
     <div class="o-container-lg">
-       <div class="row mb-3">
-            <div class="col-xl-12">
-                <h1 class="u-fs-xxl u-fw-600 ml-2">
-                    Las mejores
-                    <strong class="u-color-primary1">
-                        rutas en caravana</strong>
-                </h1>
-            </div>
-       </div>
        <div class="tc-home__fsect">
             <div class="c-card m-2" 
             [ngClass]="t.feat == false ? 'u-ds-none' : ''" 
@@ -20,26 +11,28 @@
                     <img src="{{t.thumb}}" alt="">
                 </div>
                 <div class="c-card__body">
-                    <h2 class="u-fs-22 u-color-white">
+                    <h2 class="u-fs-22 u-color-primary1">
                         {{t.title}}
                     </h2>
-                    <p class="u-fs-14 u-color-white u-ellipsis">
+                    <p class="u-fs-14 u-fw-400 u-ellipsis">
                         {{t.description}}
                     </p>
                 </div>
             </div>
        </div>
+    </div>
 
-       <div class="row my-5">
+    <div class="o-container-lg">
+       <div class="tc-home__ssect row u-border-top">
         <div class="col-12">
             <div class="u-size-per-100 u-ds-flex u-justify-between">
                 <div>
-                    <h3 class="u-fw-600">
+                    <h1 class="u-fw-600">
                         Encuentra tu 
-                        <strong class="u-color-primary1">
+                        <strong class="u-color-secondary1">
                             ruta en caravana 
                         </strong>
-                    </h3>
+                    </h1>
                 </div>
                 <div>
                     <button class="e-btn--nobtn p-flexcc">
@@ -52,19 +45,19 @@
             </div>
         </div>
        </div>
+
        <div class="row">
-            <div class="col-6" *ngFor="let t of data, let indexOfelement=index;">
-              <div class="c-list__card u-cursor-pointer" routerLink="tour/{{t.pathName | lowercase}}" (click)="getTourPos(indexOfelement)">
+            <div class="col-3" *ngFor="let t of data, let indexOfelement=index;">
+              <div class="c-list__card p-1 u-cursor-pointer" routerLink="tour/{{t.pathName | lowercase}}" (click)="getTourPos(indexOfelement)">
                 <div class="thumb">
                     <img src="{{t.thumb}}" alt="">
                     <div class="thumb__flag">
                         <img src="./assets/icons/flags/{{t.country}}.png">
                     </div>
                 </div>
-                <div class="body">
-                    <p class="u-fs-16 u-fw-500">
+                <div class="body px-2">
+                    <p class="u-fs-16 u-fw-600 u-color-primary1">
                         {{t.title}}
-                        <i class="lnr lnr-star-empty"></i>
                     </p>
                     <p class="u-fs-12 my-2 u-ellipsis">
                         {{t.description}}

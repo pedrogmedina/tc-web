@@ -1,4 +1,4 @@
-<div class="">
+<div class="c-breadcrumb">
     <div class="o-container-lg">
         <div class="row">
             <div class="col-12">
@@ -12,159 +12,125 @@
         </div>
     </div>
 </div>
-
-<section class="tc-tourpage container-lg">
-
-    <div class="row">
-        <div class="col-6 tc-tourpage__info">
-            <div>
-                <div class="mb-3">
-                    <h1 class="u-color-primary1 u-fs-22">{{data.title}}</h1>
-                    <p class="u-fs-12 u-fw-600">
-                        {{ data.excerpt }}
+<article>
+    <section class="tc-tourpage o-container-lg">
+        <div class="row">
+            <div class="col-6 tc-tourpage__info">
+                <div>
+                    <div class="mb-3">
+                        <h1 class="u-color-primary1 u-fs-22">{{data.title}}</h1>
+                        <p class="u-fs-12 u-fw-600">
+                            {{ data.excerpt }}
+                        </p>
+                    </div>
+                    <p>
+                        {{ data.description }}
                     </p>
                 </div>
-                <p>
-                    {{ data.description }}
-                </p>
-            </div>
-
-            <div class="u-bg-comp1 my-2 p-flexcb">
-                <div class="p-flexcb m-2 u-size-per-70">
-                    <p class="u-fs-12">
-                        <i class="lnr lnr-clock"></i> {{ data.duration }} días.
-                    </p>
-                    <p class="u-fs-12">
-                        <i class="lnr lnr-pushpin"></i>
-                        {{ data.numSteps }} paradas
-                    </p>
-                    <p class="u-fs-12">
-                        {{ data.start }} <i class="lnr lnr-sync"></i> {{ data.end }}
-                    </p>
-
+    
+                <div class="u-bg-comp1 my-2 p-flexcb">
+                    <div class="p-flexcb m-2 u-size-per-70">
+                        <p class="u-fs-12">
+                            <i class="lnr lnr-clock"></i> {{ data.duration }} días.
+                        </p>
+                        <p class="u-fs-12">
+                            <i class="lnr lnr-pushpin"></i>
+                            {{ data.numSteps }} paradas
+                        </p>
+                        <p class="u-fs-12">
+                            {{ data.start }} <i class="lnr lnr-sync"></i> {{ data.end }}
+                        </p>
+    
+                    </div>
+                    <button class="e-btn e-btn--primary u-fs-12">
+                        <i class="lnr lnr-map mr-2"></i> Mapa
+                    </button>
                 </div>
-                <button class="e-btn e-btn--primary u-fs-12">
-                    <i class="lnr lnr-map mr-2"></i> Mapa
-                </button>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="tc-tourpage__banner">
-                <img src="{{data.thumb}}" alt="">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="container-lg">
-    <div class="row u-mt-3">
-        <div class="col-12 col-xl-12"  *ngFor="let item of data.steps; index as i; first as isFirst">
-            <div class="c-article my-4" *ngIf="!isFirst">
-                <div class="row">
-                    <div class="col-12 col-xl-3">
-                        <div class="e-avatar c-article__img">
-                            <img class="" src="{{item.thumb}}" alt="{{item.title}}">
-                        </div>
-                    </div>
-                    <div class="col-12 col-xl-9">
-                        <div class="c-article__head">
-                            <h3 class="p-flexcs u-color-secondary1 u-fs-16 u-fw-600">
-                                <span class="u-fs-h1 u-color-primary1 u-fw-600 u-me-4">
-                                    {{ i }}
-                                </span>
-                                {{ item.title }}
-                            </h3>
-                        </div>
-                        <p class="u-fs-14" [innerHtml]="item.intro"></p>
-                        <div class="p-flexcs u-mt-2">
-                            <div class="e-pill--brown u-me-2" *ngIf="item.hight1 || item.hight2">
-                                <p class="e-pill__el u-fs-12" *ngIf="item.hight1">
-                                    <i class="lnr lnr-car"></i>
-                                    {{item.hight1}}
-                                </p>
-                                <p class="e-pill__el u-fs-12" *ngIf="item.hight2">
-                                    <i class="lnr lnr-home"></i>
-                                    {{item.hight2}}
-                                </p>
-                            </div>
-                            <div class="e-pill--sky u-me-2"  *ngIf="item.price1 || item.price2">
-                                <p class="e-pill__el u-fs-12">
-                                    <i class="lnr lnr-tag"></i>
-                                    {{item.price1}}
-                                </p>
-                            </div>
-                            <div class="e-pill--green u-me-2" *ngIf="item.web1 || item.web2">
-                                <p class="e-pill__el">
-                                    <i class="lnr lnr-pointer-right"></i>
-                                    <span class="u-fs-12" [innerHtml]="item.web1"></span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <p class="u-fs-14 u-mt-2" [innerHtml]="item.text1"></p>
-                    </div>
+            <div class="col-6">
+                <div class="tc-tourpage__banner">
+                    <img src="{{data.thumb}}" alt="">
                 </div>
             </div>
         </div>
-
-        <!-- <div class="col-12" *ngFor="let item of data.steps; index as i; first as isFirst">
-            <div class="c-accordion mt-2" *ngIf="!isFirst">
-                <div class="c-accordion__head" (click)="collapsed[i] = !collapsed[i]">
-                    <h3 class="p-flexcs u-color-secondary1 u-fs-16 u-fw-500">
-                        <span class="u-fs-h1 u-color-primary1 u-fw-600 u-me-4">
-                            {{ i }}
-                        </span>
-                        {{ item.title }}
-                    </h3>
-
-                    <div class="u-m-3">
-                        <i class="lnr" [ngClass]="collapsed[i] ? 'lnr-chevron-up' : 'lnr-chevron-down'"></i>
-                    </div>
-                </div>
-
-                <div class="c-accordion__ctn" *ngIf="!collapsed[i]">
-                    <div class="row">
-                        <div class="col-xl-2">
-                            <div class="e-avatar--full">
-                                <img class="e-avatar__img" src="{{item.thumb}}" alt="Mulhouse ruta por Alsacia">
+    </section>
+    
+    <section class="o-container-lg row">
+        <div class="col-xl-2">
+            <aside class="u-mt-6 c-maplist__aside">
+                <ul class="c-maplist u-p-3">
+                    <span class="u-fs-10 u-ms-2 u-mb-2">
+                        <i class="lnr lnr-map-marker"></i>
+                        <i>
+                            Paradas:
+                        </i>
+                    </span>
+                    <li class="c-maplist__item u-my-2" *ngFor="let item of data.steps; index as i; first as isFirst">
+                        <a href="tour/{{data.pathName}}#{{i}}" class="u-fs-14 u-fw-500" *ngIf="!isFirst">
+                            <span>
+                                {{ i }} -
+                            </span>
+                            {{ item.title }}
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="col-xl-10">
+            <div class="row u-mt-6" *ngFor="let item of data.steps; index as i; first as isFirst" id="{{i}}">
+                <div class="col-12 col-sm-12 col-xl-12">
+                    <div class="c-article u-my-8" *ngIf="!isFirst">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-xl-3">
+                                <div class="e-avatar c-article__img">
+                                    <img class="" src="{{item.thumb}}" alt="{{item.title}}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-10">
-                            <p class="u-fs-14" [innerHtml]="item.intro"></p>
+                            <div class="col-12 col-sm-6 col-xl-9">
+                                <div class="c-article__head">
+                                    <h3 class="p-flexcs u-color-secondary1 u-fs-16 u-fw-600">
+                                        <span class="u-fs-h1 u-color-primary1 u-fw-600 u-me-4">
+                                            {{ i }}
+                                        </span>
+                                        {{ item.title }}
+                                    </h3>
+                                </div>
+                                <p class="u-fs-14" [innerHtml]="item.intro"></p>
+                                <div class="p-flexcs u-mt-2">
+                                    <div class="e-pill--brown u-me-2" *ngIf="item.hight1 || item.hight2">
+                                        <p class="e-pill__el u-fs-12" *ngIf="item.hight1">
+                                            <i class="lnr lnr-car"></i>
+                                            {{item.hight1}}
+                                        </p>
+                                        <p class="e-pill__el u-fs-12" *ngIf="item.hight2">
+                                            <i class="lnr lnr-home"></i>
+                                            {{item.hight2}}
+                                        </p>
+                                    </div>
+                                    <div class="e-pill--sky u-me-2"  *ngIf="item.price1 || item.price2">
+                                        <p class="e-pill__el u-fs-12">
+                                            <i class="lnr lnr-tag"></i>
+                                            {{item.price1}}
+                                        </p>
+                                    </div>
+                                    <div class="e-pill--green u-me-2" *ngIf="item.web1 || item.web2">
+                                        <p class="e-pill__el">
+                                            <i class="lnr lnr-pointer-right"></i>
+                                            <span class="u-fs-12" [innerHtml]="item.web1"></span>
+                                        </p>
+                                    </div>
+                                </div>
+        
+                                <p class="u-fs-14 u-mt-2" *ngIf="item.text1" [innerHtml]="item.text1"></p>
+        
+                                <p class="u-fs-14 u-mt-2" *ngIf="item.text2" [innerHtml]="item.text2"></p>
 
-                            <div class="e-pill--brown u-mt-2" *ngIf="item.hight1 || item.hight2">
-                                <p class="e-pill__el u-fs-12" *ngIf="item.hight1">
-                                    <i class="lnr lnr-car"></i>
-                                    {{item.hight1}}
-                                </p>
-                                <p class="e-pill__el u-fs-12" *ngIf="item.hight2">
-                                    <i class="lnr lnr-home"></i>
-                                    {{item.hight2}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-10">
-                            <p class="u-py-5" [innerHtml]="item.text1">
-                            </p>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="e-avatar--full">
-                                <img class="e-avatar__img" src="{{item.thumb2}}" alt="Mulhouse ruta por Alsacia">
+                                <p class="u-fs-14 u-mt-2" *ngIf="item.text3" [innerHtml]="item.text3"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
-    </div>
-</section>
-<hr>
-
-<code>
-    <pre>
-        {{data.steps | json}}
-    </pre>
-</code>
+        </div>
+    </section>
+</article>

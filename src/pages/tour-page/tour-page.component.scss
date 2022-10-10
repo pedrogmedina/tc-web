@@ -15,7 +15,7 @@ $c: $prefix  + '-tourpage';
     &__banner {
         border-radius: calcrem(10);
         overflow: hidden;
-        @include setWidthAndHeight;
+        @include setWidthAndHeight(100%, 400px);
 
         img {
             @include setWidthAndHeight;
