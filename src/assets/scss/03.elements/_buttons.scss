@@ -24,8 +24,9 @@
   }
 
   &--secondary {
+    @extend .e-btn;
     background: $c-secondary1;
-    color: $c-black;
+    color: $c-white;
   }
 
   &--tertiary {
@@ -43,6 +44,7 @@
 
   &--transparent {
     background-color: transparent;
+    border: 0;
   }
 
   &--nobtn {

@@ -67,3 +67,29 @@
     opacity: 1;
   }
 }
+
+@keyframes slide-in {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+}

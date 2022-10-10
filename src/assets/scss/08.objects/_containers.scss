@@ -3,5 +3,17 @@
         margin: 0 auto;
         max-width: 1400px;
         width: 1400px;
+
+        @include xs-device {
+            padding: 0 calcrem(16);
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    &-md {
+        margin: 0 auto;
+        max-width: 1114px;
+        width: 1114px;
     }
 }

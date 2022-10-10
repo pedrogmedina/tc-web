@@ -30,12 +30,14 @@ $map-size: (
     align-items: center;
     border-radius: calcrem(6);
     cursor: pointer;
-    color: $c-primary2;
+    
+    color: $c-primary1;
     display: flex;
     padding: calcrem(8) calcrem(6) calcrem(8) calcrem(12);
     
     p {
       font-size: calcrem(14);
+      font-weight: 600;
     }
 
     .lnr {
@@ -58,9 +60,6 @@ $map-size: (
   }
 
   &__card {
-    background: $c-comp1;
-    border: calcrem(2) solid $c-comp1;
-    border-radius: calcrem(6);
     margin-bottom: calcrem(32);
     overflow: hidden;
 
@@ -69,13 +68,12 @@ $map-size: (
     }
 
     .thumb {
-      border-radius: 0.625rem;
-      float: left;
-      height: calcrem(130);
+      border-radius: calcrem(6);
+      height: calcrem(190);
       overflow: hidden;
       position: relative;
       margin-right: 1rem;
-      width: calcrem(210);
+      width: 100%;
 
       img {
         @include setWidthAndHeight(100%, 100%);

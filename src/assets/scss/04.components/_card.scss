@@ -1,21 +1,21 @@
 .c-card {
   $self: &;
 
-  border-radius: calcrem(20);
   overflow: hidden;
   cursor: pointer;
   display: flex;
   position: relative;
 
   &:hover {
-    box-shadow: 0 0 12px rgba($c-black, 0.4);
-    transition: 0.2s;
+    box-shadow: 0 0 calcrem(32) rgba($c-black, 0.06);
+    transition: 0.4s;
   }
 
   &__head {
-    position: absolute;
-    @include setWidthAndHeight(100%, 100%);
+    border-radius: calcrem(6);
+    @include setWidthAndHeight(50%, 100%);
     z-index: 0;
+    overflow: hidden;
 
       img {
         @include setWidthAndHeight(100%, 100%);
@@ -24,15 +24,12 @@
   }
 
   &__body {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
     padding: calcrem(16);
     width: 50%;
     z-index: 1;
 
     * {
-      text-shadow: 0 0 16px #000;
+      margin-bottom: calcrem(16);
     }
   }
 }
