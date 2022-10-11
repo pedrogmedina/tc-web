@@ -14,8 +14,8 @@
 </div>
 <article>
     <section class="tc-tourpage o-container-lg">
-        <div class="row">
-            <div class="col-6 tc-tourpage__info">
+        <div class="row u-dir-colrev@xs">
+            <div class="col-12 col-md-6 col-lg-6 col-xl-6 tc-tourpage__info">
                 <div>
                     <div class="mb-3">
                         <h1 class="u-color-primary1 u-fs-22">{{data.title}}</h1>
@@ -42,12 +42,12 @@
                         </p>
     
                     </div>
-                    <button class="e-btn e-btn--primary u-fs-12">
-                        <i class="lnr lnr-map mr-2"></i> Mapa
-                    </button>
+                    <a href="{{data.pdf}}" target="_blank" class="e-btn e-btn--primary u-fs-12">
+                        <i class="lnr lnr-printer mr-2"></i> Descargar PDF
+                    </a>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="tc-tourpage__banner">
                     <img src="{{data.thumb}}" alt="">
                 </div>
@@ -77,7 +77,7 @@
             </aside>
         </div>
         <div class="col-xl-10">
-            <div class="row u-mt-6" *ngFor="let item of data.steps; index as i; first as isFirst" id="{{i}}">
+            <div class="row u-mt-6 u-mt-0@xs" *ngFor="let item of data.steps; index as i; first as isFirst" id="{{i}}">
                 <div class="col-12 col-sm-12 col-xl-12">
                     <div class="c-article u-my-8" *ngIf="!isFirst">
                         <div class="row">

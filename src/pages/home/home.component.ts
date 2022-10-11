@@ -1,9 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Tour } from 'src/models/tour';
-import { ToursService } from 'src/services/tours.service';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { elementAt } from 'rxjs';
 import { DataTourService } from 'src/services/data.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,12 +14,11 @@ export class HomeComponent implements OnInit {
 
   data: any = [];
   tourId: number | undefined = 2;
+  filterRes: any = [];
   
   constructor(
-    private toursService: ToursService,
     private db: AngularFireDatabase,
     private dataTourService: DataTourService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {

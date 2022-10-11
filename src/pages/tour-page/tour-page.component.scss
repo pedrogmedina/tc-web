@@ -20,5 +20,9 @@ $c: $prefix  + '-tourpage';
         img {
             @include setWidthAndHeight;
         }
+
+        @include xs-device {
+            @include setWidthAndHeight(100%, 250px);  
+        }
     }
 }

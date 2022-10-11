@@ -13,7 +13,7 @@ $c: $prefix  + '-home';
         grid-template-rows: 140px 140px;
         grid-auto-flow: column;
         padding-bottom: calcrem(42);
-        padding-top: calcrem(70);
+        padding-top: calcrem(42);
 
         div {
             &:first-child {

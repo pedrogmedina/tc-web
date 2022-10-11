@@ -3,6 +3,10 @@
     border-radius: calcrem(8);
     margin-top: calcrem(90);
 
+    @include xs-device {
+        display: none;
+    }
+
     &__aside {
         position: sticky;
         top: calcrem(90);

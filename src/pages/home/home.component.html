@@ -1,18 +1,26 @@
 <div class="tc-home">
     <div class="o-container-lg">
+        <h1 class="u-fs-14 u-color-primary1">
+            <strong class="u-color-secondary1 u-fw-600">
+                Rutas en caravana
+            </strong>
+            por Europa.
+        </h1>
        <div class="tc-home__fsect">
             <div class="c-card m-2" 
             [ngClass]="t.feat == false ? 'u-ds-none' : ''" 
             *ngFor="let t of data; let indexOfelement=index;"
             routerLink="tour/{{t.pathName | lowercase}}"
             (click)="getTourPos(indexOfelement)">
-            <!--   -->
                 <div class="c-card__head">
                     <img src="{{t.thumb}}" alt="">
                 </div>
                 <div class="c-card__body">
                     <h2 class="u-fs-22 u-color-primary1">
                         {{t.title}}
+                        <p class="u-fs-12 u-fw-400">
+                            {{ t.excerpt }}
+                        </p>
                     </h2>
                     <p class="u-fs-14 u-fw-400 u-ellipsis">
                         {{t.description}}
@@ -27,21 +35,21 @@
         <div class="col-12">
             <div class="u-size-per-100 u-ds-flex u-justify-between">
                 <div>
-                    <h1 class="u-fw-600">
-                        Encuentra tu 
-                        <strong class="u-color-secondary1">
-                            ruta en caravana 
+                    <h2 class="u-fs-14 u-color-primary1">
+                        Listado de
+                        <strong class="u-color-secondary1 u-fw-600">
+                            rutas en caravana 
                         </strong>
-                    </h1>
+                    </h2>
                 </div>
-                <div>
+                <!-- <div>
                     <button class="e-btn--nobtn p-flexcc">
                         <span class="u-fs-12 mr-1">
                             Filtrar
                         </span>
                         <i class="lnr lnr-sort-alpha-asc"></i>
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
        </div>
@@ -51,27 +59,27 @@
               <div class="c-list__card p-1 u-cursor-pointer" routerLink="tour/{{t.pathName | lowercase}}" (click)="getTourPos(indexOfelement)">
                 <div class="thumb">
                     <img src="{{t.thumb}}" alt="">
-                    <div class="thumb__flag">
-                        <img src="./assets/icons/flags/{{t.country}}.png">
-                    </div>
                 </div>
                 <div class="body px-2">
-                    <p class="u-fs-16 u-fw-600 u-color-primary1">
-                        {{t.title}}
-                    </p>
+                    <div class="p-flexcb">
+                        <p class="u-fs-16 u-fw-600 u-color-primary1">
+                            {{t.title}}
+                        </p>
+                    </div>
                     <p class="u-fs-12 my-2 u-ellipsis">
                         {{t.description}}
                     </p>
                     <div class="u-ds-flex u-justify-end">
                         <div class="p-flexcc">
                             <p class=" u-fs-12 u-color-primary1 u-fw-500 mr-3">
+                                <i class="lnr lnr-calendar-full"></i> 
                                 {{t.duration}} días
                             </p>
                             <p class=" u-fs-12 u-color-primary1 u-fw-500 mr-3">
                                 <i class="lnr lnr-map-marker"></i> {{t.end}}
                             </p>
                             <p class=" u-fs-12 u-color-primary1 u-fw-500">
-                                <i class="lnr lnr-map"></i> Mapa
+                                <i class="lnr lnr-map"></i> {{t.country}}
                             </p>
                         </div>
                     </div>
