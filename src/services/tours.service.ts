@@ -8,8 +8,7 @@ import { AngularFireList } from '@angular/fire/compat/database';
 })
 export class ToursService {
 
-  private dbTours = '/tours';
-
+  dbTours = '/infoRoutes';
   myToursRef : AngularFireList<Tour>;
 
   constructor(
@@ -20,5 +19,8 @@ export class ToursService {
 
   getAllTour(): AngularFireList<Tour> {
     return this.myToursRef;
+  }
+
+  getTourFilter( filtro: string ) {
   }
 }
