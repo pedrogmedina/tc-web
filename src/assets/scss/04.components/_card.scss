@@ -1,6 +1,7 @@
 .c-card {
   $self: &;
 
+  border-radius: calcrem(8);
   overflow: hidden;
   cursor: pointer;
   display: flex;
@@ -47,6 +48,41 @@
       @include xs-device {
         margin-bottom: calcrem(8);
       }
+    }
+  }
+
+  &--vert {
+    @extend .c-card;
+    flex-direction: column;
+    position: relative;
+
+    @include xs-device {
+      margin-bottom: calcrem(32);
+    }
+
+    #{$self}__head {
+      @include setWidthAndHeight(100%, 150px);
+    }
+
+    #{$self}__body {
+      padding-bottom: calcrem(80);
+      padding-left: calcrem(8);
+      padding-right: calcrem(8);
+      padding-top: calcrem(8);
+      width: 100%;
+
+      @include xs-device {
+        padding-bottom: calcrem(40);
+      }
+
+      * {
+        margin-bottom: calcrem(8);
+      }
+    }
+    #{$self}__foot {
+      bottom: 0;
+      position: absolute;
+      right: calcrem(8);
     }
   }
 }

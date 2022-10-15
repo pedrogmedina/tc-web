@@ -3,25 +3,40 @@ $input: ".c-input";
 #{$input} {
   $self: &;
 
-  flex-direction: row;
-  height: calcrem(22);
+  height: calcrem(32);
+  position: relative;
   width: 100%;
 
-  &__label {
-    width: 30%;
-    word-break: break-word;
+  .mat {
+    &-form {
+      &-field {
+        &-wrapper,
+        &-flex,
+        &-infix {
+          height: inherit;
+        }
+        
+      }
 
-    &--md {
-      @extend .c-input__label;
-      width: 40%;
+      &-label {
+        &-wrapper {
+          top: calcrem(-24);
+        }
+      }
+    }
+
+    &-select-value {
+      @include center-items;
+      height: inherit;
+
+      * {
+        font-size: calcrem(12);
+      }
     }
   }
 
-  &--datePill{
-    height: calcrem(27);
-    .c-input__input{
-      font-weight: bold;
-    }
+  &__label {
+    
   }
 
   &__field {
@@ -29,7 +44,7 @@ $input: ".c-input";
     border-radius: calcrem(2);
     display: flex;
     height: 100%;
-    width: 70%;
+    width: 100%;
 
     &-select{
       p{
