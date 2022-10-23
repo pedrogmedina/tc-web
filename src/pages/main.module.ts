@@ -25,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Material
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { TourPageComponent } from './tour-page/tour-page.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,11 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     CountriesComponent,
     HomeComponent,
+    TourPageComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     MatSelectModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
