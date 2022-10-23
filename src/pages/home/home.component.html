@@ -42,20 +42,45 @@
                         </strong>
                     </h2>
                 </div>
-                <div>
+                <div class="p-flexce">
                     <!-- <button class="e-btn--nobtn p-flexcc">
                         <span class="u-fs-12 mr-1">
                             Filtrar
                         </span>
                         <i class="lnr lnr-sort-alpha-asc"></i>
                     </button> -->
+                    <span>
+                        Filtrar por:
+                    </span>
+                    <div class="e-field u-mx-3">
+                        <select
+                        class="e-field__input"
+                        [(ngModel)]="filterValue"
+                        name="coselect" 
+                        (change)="filterByfilter('country')">
+                            <option value="">
+                                Todos los paises
+                            </option>
+                            <option *ngFor="let opt of countries" value="{{ opt.prop }}">
+                                {{ opt.name }}
+                            </option>
+                        </select>
+                    </div>
+                    <!-- <div class="e-field u-mx-3">
+                        <input
+                        type="text"
+                        class="e-field__input"
+                        placeholder="Nombre ruta"
+                        [(ngModel)]="filterValue"
+                        (change)="filterByfilter('title')" />
+                    </div> -->
                 </div>
             </div>
         </div>
        </div>
 
        <div class="row">
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3" *ngFor="let t of data, let indexOfelement=index;">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3" *ngFor="let t of dataList, let indexOfelement=index;">
               <div class="c-card--vert u-cursor-pointer" routerLink="tour/{{t.pathName | lowercase}}" (click)="getTourPos(indexOfelement)">
                 <div class="c-card__head">
                     <img src="{{t.thumb}}" alt="">
