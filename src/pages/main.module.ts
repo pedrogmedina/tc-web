@@ -13,8 +13,18 @@ import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
-import { TourPageComponent } from './tour-page/tour-page.component';
+
+// import { Firestore, FirestoreModule } from '@angular/fire/firestore';
+
+// TC Components
 import { MobilemenuComponent } from 'src/layout/header/components/mobilemenu/mobilemenu.component';
+
+// Animations
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Material
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,15 +35,18 @@ import { MobilemenuComponent } from 'src/layout/header/components/mobilemenu/mob
     AppComponent,
     CountriesComponent,
     HomeComponent,
-    TourPageComponent
   ],
   imports: [
     BrowserModule,
+    MatSelectModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    BrowserAnimationsModule,
+    FormsModule
+    // FirestoreModule,
   ],
-  providers: [],
+  providers: [], //Firestore
   bootstrap: [AppComponent]
 })
 export class AppModule { }
